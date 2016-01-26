@@ -66,7 +66,7 @@ class AsterixResultReader(
     frame.reset()
     var readSize = 0
 
-    log.info("Thread "+ Thread.currentThread().getId + ": Read partition " + partition + " from " + addressPortPair.address)
+    log.debug("Thread "+ Thread.currentThread().getId + ": Read partition " + partition + " from " + addressPortPair.address)
 
 
     while(readSize < frame.getFrameSize && !isPartitionReadComplete) {
