@@ -1,6 +1,6 @@
 name := "asterix-connector"
 
-version := "1.0"
+version := "1.6.0"
 
 scalaVersion := "2.10.4"
 

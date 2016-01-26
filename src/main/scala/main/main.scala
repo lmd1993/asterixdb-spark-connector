@@ -50,7 +50,7 @@ object main {
       .setMaster("local[8]")
       .set("spark.asterix.connection.host", "localhost") //AsterixDB API host
       .set("spark.asterix.connection.port", "19002") //AsterixDB API port
-      .set("spark.asterix.pustToAsterix", "false")
+      .set("spark.asterix.frameSize", "32768") //AsterixDB compiler frame size see your asterix-build-configuration.xml
       .setAppName("AsterixDB Connector")
 
     //Initialize SparkContext with AsterixDB configuration
@@ -70,7 +70,7 @@ object main {
 
 //    val rdd = sc.aql(aql)
 
-    val df = sqlContext.aql(aql)
+    val df = sqlContext.aql(aql,true,true)
 
 //    val df = sqlContext.read.json(rdd)
     df.printSchema()
@@ -81,7 +81,7 @@ object main {
     println(ds.first().count)
 
     //map() then first throws exception
-    println(ds.map(x => x.count).first())
+    println(ds.rdd.map(x => x.count).first())
 
 
   }

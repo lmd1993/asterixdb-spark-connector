@@ -42,7 +42,7 @@ class TestAsterixResultReader extends TestFramework{
     val resultUtils = new ResultUtils
     var locationId :Int = 0
     locations.foreach{location =>
-      val resultReader = new AsterixResultReader(location,locationId,handle)
+      val resultReader = new AsterixResultReader(location,locationId, handle)
       resultUtils.displayResults(resultReader)
       locationId+=1
 

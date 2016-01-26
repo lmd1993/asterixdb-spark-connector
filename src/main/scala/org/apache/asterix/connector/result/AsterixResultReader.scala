@@ -34,10 +34,10 @@ class AsterixResultReader(
   addressPortPair: AddressPortPair,
   partition: Int,
   handle: Handle,
-  val nReaders: Int = ResultReader.NUM_READERS)
+  val nReaders: Int = ResultReader.NUM_READERS,
+  val frameSize:Int = ResultReader.FRAME_SIZE)
   extends Serializable with Logging{
 
-  val frameSize: Int = ResultUtils.FRAME_SIZE
   private val netManager = new ClientNetworkManager(nReaders)
   private val datasetClientContext = new DatasetClientContext(frameSize)
   private val monitor : IDatasetInputChannelMonitor = new DatasetInputChannelMonitor
@@ -106,7 +106,6 @@ class AsterixResultReader(
       }
     }
     readSize
-
 
   }
 

@@ -36,11 +36,12 @@ class SparkContextFunctions(@transient sc: SparkContext) extends Serializable{
     val locations = api.getResultLocations(handle)
     locations
   }
+
+
   def aql(aql:String, numPartitions:Int = ResultReader.NUM_READERS): AsterixRDD = {
-    val pushToAsterix = sc.getConf.get("spark.asterix.pustToAsterix") == "true"
     val handle = query(aql)
     val resultLocations = getLocations(handle)
-    val rdd = new AsterixRDD(sc, aql, api, resultLocations,handle, pushToAsterix)
+    val rdd = new AsterixRDD(sc, aql, api, resultLocations,handle)
     rdd.persist(StorageLevel.MEMORY_AND_DISK)
     rdd
   }
