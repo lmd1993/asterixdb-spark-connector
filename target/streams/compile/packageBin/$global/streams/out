@@ -1,0 +1,103 @@
+[0m[[0minfo[0m] [0mPackaging /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/asterix-connector_2.10-1.0.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix/AsterixSQLContext$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix/AsterixSQLContext$$anonfun$2.class[0m
+[0m[[0mdebug[0m] [0m	main/main$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/main$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/AsterixConnectorException.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/AsterixConnectorException.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/LocationPartition.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/LocationPartition.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/LocationsJson.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/LocationsJson.class[0m
+[0m[[0mdebug[0m] [0m	org/apache[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector[0m
+[0m[[0mdebug[0m] [0m	hyracks-deployment.properties[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/hyracks-deployment.properties[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixRDD$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixRDD$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$compute$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$compute$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd[0m
+[0m[[0mdebug[0m] [0m	main/listType1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/listType1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix/package.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix/package.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/result/AsterixResultReader$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/result/AsterixResultReader$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/AddressPortPair.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/AddressPortPair.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/HandleJson.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/HandleJson.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/AddressPortPair$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/AddressPortPair$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix/AsterixSQLContext$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix/AsterixSQLContext$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix/AsterixSQLContext.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix/AsterixSQLContext.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/Handle$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/Handle$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/ResultLocations.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/ResultLocations.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/result/ResultUtils.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/result/ResultUtils.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/AsterixAPI.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/AsterixAPI.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/result[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/result[0m
+[0m[[0mdebug[0m] [0m	main/main$$anonfun$testAsterixRDD$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/main$$anonfun$testAsterixRDD$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/result/AsterixResultReader.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/result/AsterixResultReader.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/Handle.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/Handle.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/package$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/package$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/ResultLocations$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/ResultLocations$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/result/DatasetInputChannelMonitor.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/result/DatasetInputChannelMonitor.class[0m
+[0m[[0mdebug[0m] [0m	main/DatasetType1$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/DatasetType1$.class[0m
+[0m[[0mdebug[0m] [0m	org[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql/asterix/package$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql/asterix/package$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixRDD.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixRDD.class[0m
+[0m[[0mdebug[0m] [0m	main/main.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/main.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$compute$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$compute$1$$anonfun$apply$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/LocationsJson$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/LocationsJson$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixPartition.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixPartition.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixRDD$$anonfun$1.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/package.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/package.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/rdd/AsterixPartition$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/rdd/AsterixPartition$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/SparkContextFunctions.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/SparkContextFunctions.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark[0m
+[0m[[0mdebug[0m] [0m	main[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main[0m
+[0m[[0mdebug[0m] [0m	main/DatasetType1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/DatasetType1.class[0m
+[0m[[0mdebug[0m] [0m	main/listType1$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/main/listType1$.class[0m
+[0m[[0mdebug[0m] [0m	org/apache/spark/sql[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/spark/sql[0m
+[0m[[0mdebug[0m] [0m	org/apache/asterix/connector/HandleJson$.class[0m
+[0m[[0mdebug[0m] [0m	  /home/wail/Dropbox (MIT)/AsterixConnector/asterix-connector/target/scala-2.10/classes/org/apache/asterix/connector/HandleJson$.class[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m

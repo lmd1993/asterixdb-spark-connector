@@ -1,0 +1,8 @@
+[warn] Scala version was updated by one of library dependencies:
+[warn] 	* org.scala-lang:scala-library:(2.10.4, 2.10.0, 2.10.3) -> 2.10.5
+[warn] To force scalaVersion, add the following:
+[warn] 	ivyScala := ivyScala.value map { _.copy(overrideScalaVersion = true) }
+[warn] There may be incompatibilities among your library dependencies.
+[warn] Here are some of the libraries that were evicted:
+[warn] 	* org.json:json:20090211 -> 20140107
+[warn] Run 'evicted' to see detailed eviction warnings

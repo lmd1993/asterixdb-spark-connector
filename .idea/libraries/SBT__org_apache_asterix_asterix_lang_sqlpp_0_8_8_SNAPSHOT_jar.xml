@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SBT: org.apache.asterix:asterix-lang-sqlpp:0.8.8-SNAPSHOT:jar">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/asterix/asterix-lang-sqlpp/0.8.8-SNAPSHOT/asterix-lang-sqlpp-0.8.8-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
