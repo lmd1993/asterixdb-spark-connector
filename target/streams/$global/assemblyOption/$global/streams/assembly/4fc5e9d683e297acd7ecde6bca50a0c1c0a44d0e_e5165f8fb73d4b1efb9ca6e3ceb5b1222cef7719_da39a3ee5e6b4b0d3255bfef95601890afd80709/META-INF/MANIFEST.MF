@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Implementation-Title: hyracks-util
+Implementation-Version: 0.2.17-SNAPSHOT
+Archiver-Version: Plexus Archiver
+Built-By: wail
+Specification-Vendor: The Apache Software Foundation
+Specification-Title: hyracks-util
+Implementation-Vendor-Id: org.apache.hyracks
+Implementation-Vendor: The Apache Software Foundation
+Created-By: Apache Maven 3.3.3
+Build-Jdk: 1.8.0_45
+Specification-Version: 0.2.17-SNAPSHOT
+Implementation-URL: http://www.apache.org/fullstack/hyracks/hyracks-ut
+ il/
+

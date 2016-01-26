@@ -19,8 +19,7 @@
 package org.apache.asterix.connector.rdd
 
 import org.apache.asterix.connector.result.{AsterixResultReader, ResultUtils}
-import org.apache.asterix.connector.{AddressPortPair, Handle, ResultLocations, AsterixAPI}
-import org.apache.asterix.result.ResultReader
+import org.apache.asterix.connector.{Handle, ResultLocations, AsterixAPI}
 import org.apache.spark.{TaskContext, Partition, SparkContext}
 import org.apache.spark.rdd.RDD
 import org.json.JSONObject
@@ -34,10 +33,10 @@ class AsterixRDD(@transient sc: SparkContext,
                  @transient val handle: Handle)
   extends RDD[String](sc, Seq.empty){
 
-  private var nReaders: Int = ResultReader.NUM_READERS
+  private var nReaders: Int = ResultUtils.NUM_READERS
   private val frameSize :Int = sc.getConf.get("spark.asterix.frameSize") match {
     case numString if numString forall Character.isDigit => numString.toInt
-    case _ => ResultReader.FRAME_SIZE
+    case _ => ResultUtils.FRAME_SIZE
   }
 
   override def getPreferredLocations(split:Partition) : Seq[String] = {

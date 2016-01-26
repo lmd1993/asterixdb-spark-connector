@@ -4,7 +4,7 @@
 		module="asterix-connector_2.10"
 		revision="1.0"
 		status="integration"
-		publication="20160125075224"
+		publication="20160126184231"
 	>
 		<description>
 		asterix-connector
@@ -27,20 +27,25 @@
 	</configurations>
 	<publications>
 		<artifact name="asterix-connector_2.10" type="pom" ext="pom" conf="pom"/>
-		<artifact name="asterix-connector_2.10" type="jar" ext="jar" conf="optional" e:classifier="download"/>
+		<artifact name="asterix-connector_2.10" type="jar" ext="jar" conf="compile"/>
+		<artifact name="asterix-connector_2.10" type="src" ext="jar" conf="sources" e:classifier="sources"/>
+		<artifact name="asterix-connector_2.10" type="doc" ext="jar" conf="docs" e:classifier="javadoc"/>
 	</publications>
 	<dependencies>
-		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.4" conf="scala-tool->default,optional(default)"/>
-		<dependency org="org.scala-lang" name="scala-library" rev="2.10.4" conf="scala-tool->default,optional(default);compile->default(compile)"/>
-		<dependency org="org.scalamacros" name="paradise_2.10.4" rev="2.0.0" conf="plugin->default(compile)"/>
-		<dependency org="org.scalamacros" name="quasiquotes_2.10" rev="2.0.0" conf="compile->default(compile)"/>
-		<dependency org="org.apache.asterix" name="asterix-app" rev="0.8.8-SNAPSHOT" conf="compile->default(compile)">
-			<exclude org="org.slf4j" module="*" name="*" type="*" ext="*" conf="" matcher="exact"/>
-		</dependency>
-		<dependency org="org.apache.spark" name="spark-sql_2.10" rev="1.6.0" conf="compile->default(compile)"/>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.10.5" conf="scala-tool->default,optional(default)"/>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.10.5" conf="scala-tool->default,optional(default);compile->default(compile)"/>
+		<dependency org="org.apache.hyracks" name="hyracks-api" rev="0.2.17-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="org.apache.hyracks" name="hyracks-client" rev="0.2.17-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="org.apache.hyracks" name="hyracks-control-nc" rev="0.2.17-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="org.apache.hyracks" name="hyracks-dataflow-common" rev="0.2.17-SNAPSHOT" conf="compile->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-sql_2.10" rev="1.6.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-core_2.10" rev="1.6.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-streaming_2.10" rev="1.6.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-catalyst_2.10" rev="1.6.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-hive_2.10" rev="1.6.0" conf="provided->default(compile)"/>
 		<dependency org="org.apache.httpcomponents" name="httpclient" rev="4.5" conf="compile->default(compile)"/>
-		<dependency org="net.liftweb" name="lift-json_2.10" rev="3.0-M1" conf="compile->default(compile)"/>
+		<dependency org="net.liftweb" name="lift-json_2.10" rev="2.6.2" conf="compile->default(compile)"/>
 		<dependency org="junit" name="junit" rev="4.11" conf="test->default(compile)"/>
-		<dependency org="org.json" name="json" rev="20140107" conf="compile->default(compile)"/>
+		<dependency org="org.json" name="json" rev="20140107" conf="provided->default(compile)"/>
 	</dependencies>
 </ivy-module>

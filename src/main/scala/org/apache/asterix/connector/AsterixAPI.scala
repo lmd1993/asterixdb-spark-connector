@@ -23,7 +23,6 @@ import java.io.InputStream
 import java.net.URLEncoder
 
 
-import org.apache.http.HttpEntity
 import org.apache.http.client.methods.{CloseableHttpResponse, HttpPost, HttpGet}
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.{CloseableHttpClient, HttpClients}

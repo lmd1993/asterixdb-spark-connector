@@ -18,11 +18,10 @@
  */
 package org.apache.asterix.connector.result
 
-import java.net.{InetSocketAddress, InetAddress}
+import java.net.InetSocketAddress
 
 
 import org.apache.asterix.connector.{AsterixConnectorException, Handle, AddressPortPair}
-import org.apache.asterix.result.ResultReader
 import org.apache.hyracks.api.comm.{FrameHelper, IFrame}
 import org.apache.hyracks.api.dataset.IDatasetInputChannelMonitor
 import org.apache.hyracks.client.dataset.DatasetClientContext
@@ -34,8 +33,8 @@ class AsterixResultReader(
   addressPortPair: AddressPortPair,
   partition: Int,
   handle: Handle,
-  val nReaders: Int = ResultReader.NUM_READERS,
-  val frameSize:Int = ResultReader.FRAME_SIZE)
+  val nReaders: Int = ResultUtils.NUM_READERS,
+  val frameSize:Int = ResultUtils.FRAME_SIZE)
   extends Serializable with Logging{
 
   private val netManager = new ClientNetworkManager(nReaders)

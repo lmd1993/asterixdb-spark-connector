@@ -19,7 +19,6 @@
 package org.apache.asterix.connector
 
 import org.apache.asterix.connector.rdd.AsterixRDD
-import org.apache.asterix.result.ResultReader
 import org.apache.spark.SparkContext
 import org.apache.spark.storage.StorageLevel
 
@@ -38,10 +37,10 @@ class SparkContextFunctions(@transient sc: SparkContext) extends Serializable{
   }
 
 
-  def aql(aql:String, numPartitions:Int = ResultReader.NUM_READERS): AsterixRDD = {
+  def aql(aql:String): AsterixRDD = {
     val handle = query(aql)
     val resultLocations = getLocations(handle)
-    val rdd = new AsterixRDD(sc, aql, api, resultLocations,handle)
+    val rdd = new AsterixRDD(sc, aql, api, resultLocations, handle)
     rdd.persist(StorageLevel.MEMORY_AND_DISK)
     rdd
   }

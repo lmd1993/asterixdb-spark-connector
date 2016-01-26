@@ -34,9 +34,11 @@ import java.util.List;
 
 public class ResultUtils {
 
+    public static final int FRAME_SIZE = 32768;
+    public static final int NUM_READERS = 1;
+
     private final Charset UTF_8 = Charset.forName("UTF-8");
-    public final static int FRAME_SIZE = 32768;
-    public static FrameManager resultDisplayFrameMgr = new FrameManager(FRAME_SIZE);
+    private static FrameManager resultDisplayFrameMgr = new FrameManager(FRAME_SIZE);
     private IFrameTupleAccessor fta;
     private IFrame frame;
 

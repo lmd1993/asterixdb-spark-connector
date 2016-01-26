@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Built-By: jesse
+Build-Jdk: 1.6.0_26
+Implementation-Vendor: Eclipse.org - Jetty
+Implementation-Version: 8.0.0.RC0
+url: http://www.eclipse.org/jetty
+Export-Package: org.eclipse.jetty.servlet;uses:="org.eclipse.jetty.ser
+ ver,org.eclipse.jetty.io,org.eclipse.jetty.http,org.eclipse.jetty.ser
+ ver.nio,org.eclipse.jetty.server.handler,org.eclipse.jetty.util.resou
+ rce,javax.servlet,org.eclipse.jetty.server.ssl,org.eclipse.jetty.util
+ .log,javax.servlet.http,org.eclipse.jetty.util,org.eclipse.jetty.util
+ .component,javax.servlet.descriptor,org.eclipse.jetty.server.session,
+ org.eclipse.jetty.security,org.eclipse.jetty.continuation";version="8
+ .0.0",org.eclipse.jetty.servlet.jmx;uses:="org.eclipse.jetty.servlet,
+ org.eclipse.jetty.jmx";version="8.0.0",org.eclipse.jetty.servlet.list
+ ener;uses:="javax.servlet,org.eclipse.jetty.util.log,org.eclipse.jett
+ y.util";version="8.0.0"
+Bundle-Classpath: .
+Tool: Bnd-1.15.0
+Bundle-Name: Jetty :: Servlet Handling
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Copyright: Copyright (c) 2008-2009 Mort Bay Consulting Pty. Ltd.
+Bundle-Vendor: Eclipse Jetty Project
+Bundle-Version: 8.0.0.RC0
+Bnd-LastModified: 1313505477981
+Bundle-ManifestVersion: 2
+Bundle-Description: Jetty Servlet Container
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Import-Package: javax.servlet;version="[3.0,4)",javax.servlet.descript
+ or;version="[3.0,4)",javax.servlet.http;version="[3.0,4)",org.eclipse
+ .jetty.continuation;version="[8.0,9)",org.eclipse.jetty.http;version=
+ "[8.0,9)",org.eclipse.jetty.io;version="[8.0,9)",org.eclipse.jetty.jm
+ x;resolution:=optional;version="[7.3,8)",org.eclipse.jetty.security;v
+ ersion="[8.0,9)",org.eclipse.jetty.server;version="[8.0,9)",org.eclip
+ se.jetty.server.handler;version="[8.0,9)",org.eclipse.jetty.server.ni
+ o;version="[8.0,9)",org.eclipse.jetty.server.session;version="[8.0,9)
+ ",org.eclipse.jetty.server.ssl;version="[8.0,9)",org.eclipse.jetty.ut
+ il;version="[8.0,9)";resolution:=optional,org.eclipse.jetty.util.comp
+ onent;version="[8.0,9)";resolution:=optional,org.eclipse.jetty.util.l
+ og;version="[8.0,9)";resolution:=optional,org.eclipse.jetty.util.reso
+ urce;version="[8.0,9)";resolution:=optional
+Bundle-SymbolicName: org.eclipse.jetty.servlet
+Bundle-DocURL: http://www.eclipse.org/jetty
+

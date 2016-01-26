@@ -4,10 +4,10 @@
 	<info
 		organisation="default"
 		module="asterix-connector_2.10"
-		revision="1.6.0"
+		revision="1.0"
 		conf="pom"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool"
-		date="20160126142136"/>
+		date="20160126184231"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>

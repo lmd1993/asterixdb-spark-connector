@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: 1.6.0_10-beta (Sun Microsystems Inc.)
+Built-By: janb
+Build-Jdk: 1.6.0_10-beta
+Export-Package: javax.servlet;uses:="javax.servlet.annotation,javax.se
+ rvlet.descriptor";version="3.0",javax.servlet.annotation;uses:="javax
+ .servlet";version="3.0",javax.servlet.descriptor;version="3.0",javax.
+ servlet.http;uses:="javax.servlet";version="3.0",javax.servlet.jsp.re
+ sources;version="3.0",javax.servlet.resources;version="3.0"
+Ignore-Package: javax.servlet,javax.servlet.descriptor,javax.servlet.j
+ sp.resources,javax.servlet.annotation,javax.servlet.http,javax.servle
+ t.resources
+Tool: Bnd-0.0.311
+Bundle-Name: Servlet API
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Mort Bay Consulting
+Implementation-Vendor: JCP
+Bundle-Version: 3.0
+Bnd-LastModified: 1266983261069
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0, http://www
+ .eclipse.org/org/documents/epl-v10.php
+Bundle-Description: Servlet API
+Specification-Version: 3.0
+Bundle-SymbolicName: org.mortbay.jetty.servlet-api
+Bundle-DocURL: http://www.mortbay.com
+Originally-Created-By: 1.6.0_10-beta (Sun Microsystems Inc.)
+
