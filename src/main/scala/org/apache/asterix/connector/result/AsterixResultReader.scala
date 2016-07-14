@@ -51,7 +51,7 @@ class AsterixResultReader(
     inputChannel
   }
 
-  private def isPartitionReadComplete = monitor.getNFramesAvailable <= 0 && monitor.eosReached()
+  def isPartitionReadComplete = monitor.getNFramesAvailable <= 0 && monitor.eosReached()
   private def isFailed = monitor.failed()
   private def waitForNextFrame() = {
     monitor.synchronized{
@@ -107,8 +107,4 @@ class AsterixResultReader(
     readSize
 
   }
-
-
-
-
 }

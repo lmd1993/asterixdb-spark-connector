@@ -22,4 +22,8 @@ import org.apache.commons.lang.StringEscapeUtils
 
 class AsterixConnectorException(message: String)
   extends Exception(StringEscapeUtils.unescapeJava("\n"+message.replaceAll("&lt([^.]*?)&gt","$1"))){
+
+  def this(exception: Exception) {
+    this(exception.getMessage)
+  }
 }

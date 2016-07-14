@@ -26,6 +26,7 @@ import java.net.URLEncoder
 import org.apache.http.client.methods.{CloseableHttpResponse, HttpPost, HttpGet}
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.{CloseableHttpClient, HttpClients}
+import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
 import org.apache.hyracks.api.dataset.ResultSetId
 import org.apache.hyracks.api.job.JobId
 import org.apache.spark.SparkContext
@@ -39,15 +40,17 @@ case class Handle(jobId: JobId, resultSetId: ResultSetId)
 case class AddressPortPair(address: String, port: String)
 case class ResultLocations(handle:Handle, locations:Seq[AddressPortPair])
 
+
+
 //For JSON serialization purposes
 private[this] case class LocationsJson(locations:Seq[AddressPortPair])
 private[this] case class HandleJson(handle: Seq[Long])
 
 class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
 
-  private def host = sc.getConf.get("spark.asterix.connection.host")
-  private def port = sc.getConf.get("spark.asterix.connection.port")
-  private def apiURL = s"http://$host:$port/"
+  private val host = sc.getConf.get("spark.asterix.connection.host")
+  private val port = sc.getConf.get("spark.asterix.connection.port")
+  private val apiURL = s"http://$host:$port/"
 
 
   private def getHandleJson(handle: Handle) : HandleJson = HandleJson(Seq[Long](handle.jobId.getId,
@@ -87,7 +90,7 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
     handle
   }
 
-  def getStatus(handle: Handle) : String = {
+  def getStatus(handle: Handle) : Status = {
     val handleJSON = getHandleJson(handle: Handle)
     val handleJSONString = URLEncoder.encode(write(handleJSON),"UTF-8")
 
@@ -95,9 +98,14 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
 
     val url = apiURL + "query/status?handle=" + handleJSONString
 
-    val response = GETRequest(url)
+    val response = new JSONObject(GETRequest(url))
 
-    response
+    response.getString("status") match {
+      case "RUNNUMG" => Status.RUNNING
+      case "SUCCESS" => Status.SUCCESS
+      case _ => Status.FAILED
+    }
+
   }
 
   def getResultSchema(handle: Handle) : JSONObject = {
@@ -108,7 +116,7 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
 
     log.debug("Get schema of: " + handleJSONString)
 
-    val url = apiURL+"query/schema?handle=" + handleJSONString + "&schema-format=ADM_AND_DUMMY_JSON"
+    val url = apiURL+"query/result/schema?handle=" + handleJSONString + "&schema-format=ADM_AND_DUMMY_JSON"
     val response = GETRequest(url)
     new JSONObject(response)
   }
@@ -121,7 +129,7 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
 
     log.debug("Get locations of: " + handleJSONString)
 
-    val url = apiURL + "query/locations?handle=" + handleJSONString
+    val url = apiURL + "query/result/location?handle=" + handleJSONString
 
     val response = GETRequest(url)
     log.info("Result Locations: " + response)
@@ -134,7 +142,7 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
       case true => apiURL+"aql?mode=asynchronous&schema-inferencer=Spark"
       case false => apiURL+"aql"
     }
-    val response = POSTRequest(url,query)
+    val response = POSTRequest(url, query)
 
     if(async)
       log.info("Response Handle: " + response)
@@ -157,7 +165,7 @@ class AsterixAPI(@transient sc: SparkContext) extends org.apache.spark.Logging {
   private def POSTRequest(url: String , entity:String) : String = {
     val httpclient: CloseableHttpClient = HttpClients.createDefault
     val httpPost: HttpPost = new HttpPost(url)
-    httpPost.setEntity(new StringEntity(entity))
+    httpPost.setEntity(new StringEntity(entity, "UTF-8"))
     val response: CloseableHttpResponse = httpclient.execute(httpPost)
     val responseContent: InputStream = response.getEntity.getContent
     val responseString = scala.io.Source.fromInputStream(responseContent).mkString

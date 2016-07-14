@@ -20,12 +20,14 @@ package org.apache.spark.sql.asterix
 
 
 import org.apache.spark.sql.{DataFrame, SQLContext}
+//import org.apache.spark.ml
 
 
 class SQLContextFunctions(@transient sqlContext:SQLContext)
   extends org.apache.spark.Logging with Serializable {
 
-  @transient def admToCaseClass(adm:String) : String = {
+  @transient
+  def admToCaseClass(adm:String) : String = {
     println("/*")
     println(adm)
     println("*/")
@@ -33,7 +35,7 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
     val res = types.map { t =>
       val classNameFields = t.split('{')
 
-      val className = classNameFields(0)
+      val className = classNameFields(0)(0).toUpper + classNameFields(0).substring(1)
       val fields = classNameFields(1).split(',').map{ f =>
         val nameType = f.split(':')
         val name = nameType(0).replaceAll(" ", "")
@@ -53,13 +55,13 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
     res
   }
 
-  @transient def aql(query:String, infer:Boolean = false, printCaseClasses:Boolean=false) : DataFrame =
-  {
+  @transient
+  def aql(query:String, infer:Boolean = false, printCaseClasses:Boolean=false) : DataFrame = {
     import org.apache.asterix.connector._
 
     val sc = sqlContext.sparkContext
     val rdd = sc.aql(query)
-    val partitionedRdd = rdd.repartitionAsterix(rdd.getPartitions.length * 2)
+    val partitionedRdd = rdd.repartitionAsterix(rdd.getPartitions.length * 4)
     if(infer) {
       log.info("Preparing schema")
       val schemaJSON = rdd.getSchema
@@ -72,7 +74,6 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
       }
        return sqlContext.read.schema(dummyDF.schema).json(partitionedRdd)
     }
-
     sqlContext.read.json(partitionedRdd)
   }
 }

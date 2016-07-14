@@ -29,3 +29,7 @@ set javaOptions fork in run := "true"
 set javaOptions fork in run := true
 set javaOptions += "fork in run := true"
 run
+help
+projects
+tasks
+run

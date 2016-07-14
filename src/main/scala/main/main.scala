@@ -18,8 +18,6 @@
  */
 package main
 
-import java.util
-
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.asterix._
@@ -31,26 +29,20 @@ case class DatasetType1(count:String, name:Array[listType1])
 object main {
   var sc: SparkContext = null
 
-//  val aql = """
-//              |use dataverse wosDataverse;
-//              |for $x in dataset wos
-//              |limit 10
-//              |return $x""".stripMargin
   val aql = """
-              |use dataverse wosDataverse
-              |for $x in dataset wos
-              |let $summary := $x.static_data.summary
-              |let $names := $summary.names
-              |where $names.count !="1"
-              |return $names
-            """.stripMargin
+              |use dataverse twitterDataverse
+              |for $x in dataset tweet
+              |limit 10
+              |return $x
+              |""".stripMargin
+
 
   def init() = {
     val conf = new SparkConf()
       .setMaster("local[8]")
       .set("spark.asterix.connection.host", "localhost") //AsterixDB API host
       .set("spark.asterix.connection.port", "19002") //AsterixDB API port
-      .set("spark.asterix.frameSize", "32768") //AsterixDB compiler frame size see your asterix-build-configuration.xml
+      .set("spark.asterix.frameSize", "131072") //AsterixDB compiler frame size see your asterix-build-configuration.xml
       .setAppName("AsterixDB Connector")
 
     //Initialize SparkContext with AsterixDB configuration
@@ -70,18 +62,12 @@ object main {
 
 //    val rdd = sc.aql(aql)
 
-    val df = sqlContext.aql(aql,true,true)
+    val df = sqlContext.aql(aql)
 
 //    val df = sqlContext.read.json(rdd)
     df.printSchema()
 
-    val ds = df.as[DatasetType1]
-
-    //Taking first() works fine
-    println(ds.first().count)
-
-    //map() then first throws exception
-    println(ds.rdd.map(x => x.count).first())
+    df.show(10)
 
 
   }

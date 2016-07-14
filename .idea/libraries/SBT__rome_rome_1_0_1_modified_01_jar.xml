@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="SBT: rome:rome:1.0.1-modified-01:jar">
-    <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/rome/rome/1.0.1-modified-01/rome-1.0.1-modified-01.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

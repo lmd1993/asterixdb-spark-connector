@@ -19,6 +19,7 @@
 package org.apache.asterix.connector
 
 import org.apache.asterix.connector.rdd.AsterixRDD
+import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
 import org.apache.spark.SparkContext
 import org.apache.spark.storage.StorageLevel
 
@@ -39,9 +40,20 @@ class SparkContextFunctions(@transient sc: SparkContext) extends Serializable{
 
   def aql(aql:String): AsterixRDD = {
     val handle = query(aql)
+    var isRunning = true
+
+    while(isRunning) {
+      val status = api.getStatus(handle)
+      status match {
+        case Status.SUCCESS => isRunning = false
+        case Status.FAILED => throw new AsterixConnectorException("Job " + handle.jobId + " failed.")
+        case Status.RUNNING => wait(100)
+      }
+
+    }
     val resultLocations = getLocations(handle)
     val rdd = new AsterixRDD(sc, aql, api, resultLocations, handle)
-    rdd.persist(StorageLevel.MEMORY_AND_DISK)
+//    rdd.persist(StorageLevel.MEMORY_AND_DISK)
     rdd
   }
 

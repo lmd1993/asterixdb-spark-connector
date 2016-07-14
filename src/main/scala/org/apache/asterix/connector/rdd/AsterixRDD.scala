@@ -18,7 +18,7 @@
  */
 package org.apache.asterix.connector.rdd
 
-import org.apache.asterix.connector.result.{AsterixResultReader, ResultUtils}
+import org.apache.asterix.connector.result.{AsterixResultIterator, AsterixResultReader, ResultUtils}
 import org.apache.asterix.connector.{Handle, ResultLocations, AsterixAPI}
 import org.apache.spark.{TaskContext, Partition, SparkContext}
 import org.apache.spark.rdd.RDD
@@ -55,14 +55,16 @@ class AsterixRDD(@transient sc: SparkContext,
   }
 
 
-  @transient def repartitionAsterix(numPartitions: Int): RDD[String] ={
+  @transient
+  def repartitionAsterix(numPartitions: Int): RDD[String] ={
     val count = getPartitions.length
     nReaders = Math.ceil(numPartitions/count).asInstanceOf[Int]
     super.repartition(numPartitions)
   }
 
 
-  @transient def getSchema  : JSONObject = {
+  @transient
+  def getSchema : JSONObject = {
     api.getResultSchema(handle)
   }
 
@@ -71,9 +73,7 @@ class AsterixRDD(@transient sc: SparkContext,
 
     val resultReader = new AsterixResultReader(partition.location, partition.index, partition.handle, nReaders, frameSize)
 
-    val results = new ResultUtils
     val startTime = System.nanoTime()
-    
 
     context.addTaskCompletionListener{(context) =>
       val endTime = System.nanoTime()
@@ -81,7 +81,7 @@ class AsterixRDD(@transient sc: SparkContext,
     }
 
 
-    results.displayResults(resultReader).iterator()
+    new AsterixResultIterator(resultReader)
   }
 
 }

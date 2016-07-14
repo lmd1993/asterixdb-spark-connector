@@ -35,20 +35,5 @@ class TestAsterixResultReader extends TestFramework{
       """.stripMargin)
   }
 
-  @Test
-  def testRead() = {
-    val handle = executeAsync()
-    val locations = api.getResultLocations(handle).locations
-    val resultUtils = new ResultUtils
-    var locationId :Int = 0
-    locations.foreach{location =>
-      val resultReader = new AsterixResultReader(location,locationId, handle)
-      resultUtils.displayResults(resultReader)
-      locationId+=1
-
-    }
-
-  }
-
 
 }
