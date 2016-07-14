@@ -1,5 +1,3 @@
-invIndex*
-primaryBTree*
 bin
 target
 .classpath
@@ -37,4 +35,3 @@ dist
 *.iml
 .idea/
 *~
-target
