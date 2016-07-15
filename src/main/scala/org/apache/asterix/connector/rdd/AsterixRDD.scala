@@ -18,26 +18,31 @@
  */
 package org.apache.asterix.connector.rdd
 
-import org.apache.asterix.connector.result.{AsterixResultIterator, AsterixResultReader, ResultUtils}
-import org.apache.asterix.connector.{Handle, ResultLocations, AsterixAPI}
+import org.apache.asterix.connector.result.{AsterixResultIterator, AsterixResultReader, AsterixClient}
+import org.apache.asterix.connector.{Configuration, Handle, ResultLocations, AsterixHttpAPI}
 import org.apache.spark.{TaskContext, Partition, SparkContext}
 import org.apache.spark.rdd.RDD
 import org.json.JSONObject
-import scala.collection.JavaConversions._
 
+import scala.util.Try
 
+/**
+ * AsterixRDD is the bridge between AsterixDB and Spark.
+ *
+ * @param sc SparkContext
+ * @param aql Currently not used.
+ * @param api AsterixDB HTTP API client.
+ * @param locations Result Locations.
+ * @param handle Result handle from the HTTP API for the submitted job.
+ */
 class AsterixRDD(@transient sc: SparkContext,
-                 @transient val aql:String,
-                 @transient val api: AsterixAPI,
-                 @transient val locations: ResultLocations,
-                 @transient val handle: Handle)
+                 @transient aql:String,
+                 @transient api: AsterixHttpAPI,
+                 @transient locations: ResultLocations,
+                 @transient handle: Handle,
+                 val configuration: Configuration)
   extends RDD[String](sc, Seq.empty){
 
-  private var nReaders: Int = ResultUtils.NUM_READERS
-  private val frameSize :Int = sc.getConf.get("spark.asterix.frameSize") match {
-    case numString if numString forall Character.isDigit => numString.toInt
-    case _ => ResultUtils.FRAME_SIZE
-  }
 
   override def getPreferredLocations(split:Partition) : Seq[String] = {
     val location = split.asInstanceOf[AsterixPartition].location.address
@@ -56,28 +61,28 @@ class AsterixRDD(@transient sc: SparkContext,
 
 
   @transient
-  def repartitionAsterix(numPartitions: Int): RDD[String] ={
-    val count = getPartitions.length
-    nReaders = Math.ceil(numPartitions/count).asInstanceOf[Int]
-    super.repartition(numPartitions)
-  }
-
-
-  @transient
   def getSchema : JSONObject = {
     api.getResultSchema(handle)
+  }
+
+  @transient
+  def repartitionAsterix(numPartitions: Int): RDD[String] ={
+    val count = getPartitions.length
+    super.repartition(numPartitions)
   }
 
   override def compute(split:Partition, context:TaskContext): Iterator[String] = {
     val partition = split.asInstanceOf[AsterixPartition]
 
-    val resultReader = new AsterixResultReader(partition.location, partition.index, partition.handle, nReaders, frameSize)
+    val resultReader = new AsterixResultReader(partition.location, partition.index,
+      partition.handle, configuration)
 
     val startTime = System.nanoTime()
 
     context.addTaskCompletionListener{(context) =>
       val endTime = System.nanoTime()
-      logInfo("Finish from running partition:" + partition.index + " in " + ((endTime-startTime)/1000000000d) + "s")
+      logInfo("Finish from running partition:" + partition.index
+        + " in " + ((endTime-startTime)/1000000000d) + "s")
     }
 
 

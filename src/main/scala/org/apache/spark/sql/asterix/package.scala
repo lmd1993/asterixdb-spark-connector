@@ -18,7 +18,10 @@
  */
 package org.apache.spark.sql
 
+/**
+ * Makes Spark SQLContext accepts AsterixDB queries.
+ */
 package object asterix {
-  implicit def toSparkSQLContextFunctions(sqlContext:SQLContext) : SQLContextFunctions =
+  implicit def toSparkSQLContextFunctions(sqlContext: SQLContext): SQLContextFunctions =
     new SQLContextFunctions(sqlContext)
 }

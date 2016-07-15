@@ -24,6 +24,9 @@ import org.apache.hyracks.api.dataset.IDatasetInputChannelMonitor;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * Channel monitor to inform the client about the result status while reading.
+ */
 public class DatasetInputChannelMonitor implements IDatasetInputChannelMonitor {
     private final AtomicInteger nAvailableFrames;
 

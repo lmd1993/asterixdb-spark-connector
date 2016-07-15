@@ -20,7 +20,10 @@ package org.apache.asterix
 
 import org.apache.spark.SparkContext
 
+/**
+ * Makes SparkContext accepts AsterixDB queries using both aql() and sqlpp() methods.
+ */
 package object connector {
-  implicit def toSparkContextFunctions(sc:SparkContext) : SparkContextFunctions =
+  implicit def toSparkContextFunctions(sc: SparkContext): SparkContextFunctions =
     new SparkContextFunctions(sc)
 }

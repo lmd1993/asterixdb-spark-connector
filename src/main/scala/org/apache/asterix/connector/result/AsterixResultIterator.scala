@@ -18,11 +18,21 @@
  */
 package org.apache.asterix.connector.result
 
+/**
+ * AsterixDB result iterator for AsterixRDD.
+ *
+ * @param resultReader AsterixResultReader to get the JSON format.
+ * @tparam String String JSON format.
+ */
 class AsterixResultIterator[String] (resultReader: AsterixResultReader) extends Iterator[String] {
 
-  private[this] val resultUtils = new ResultUtils(resultReader)
+  private[this] val resultUtils = new AsterixClient(resultReader)
 
-  override def next() = resultUtils.getResultTuple.asInstanceOf[String]
+  /**
+   * Converts [[java.lang.String]] to [[String]]
+   * @return
+   */
+  override def next(): String = resultUtils.getResultTuple.asInstanceOf[String]
 
   override def hasNext: Boolean = resultUtils.hasNext
 }

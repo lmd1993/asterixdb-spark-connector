@@ -1,6 +1,11 @@
 bin
-target
+target/resolution-cache
+target/streams
+target/scala-2.10/*.jar
+target/scala-2.10/classes
+target/scala-2.10/test-classes
 project/project
+src/main/resources/hyracks-deployment.properties
 project/target
 .classpath
 .settings
