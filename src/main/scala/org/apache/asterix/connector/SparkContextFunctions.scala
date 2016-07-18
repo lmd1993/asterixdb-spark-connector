@@ -23,7 +23,6 @@ import org.apache.asterix.connector.rdd.AsterixRDD
 import org.apache.asterix.connector.result.AsterixClient
 import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
 import org.apache.spark.{Logging, SparkContext}
-import org.apache.spark.storage.StorageLevel
 
 import scala.util.{Failure, Success, Try}
 

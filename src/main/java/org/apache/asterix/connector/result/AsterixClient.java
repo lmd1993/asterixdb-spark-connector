@@ -28,6 +28,7 @@ import org.apache.hyracks.api.exceptions.HyracksDataException;
 import org.apache.hyracks.control.nc.resources.memory.FrameManager;
 import org.apache.hyracks.dataflow.common.comm.io.ResultFrameTupleAccessor;
 import org.apache.hyracks.dataflow.common.comm.util.ByteBufferInputStream;
+import org.apache.log4j.Logger;
 
 
 import java.io.IOException;
@@ -36,10 +37,11 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * AsterixDB result reader client with the support of prefetching.
+ * AsterixDB result reader client with the support of pre-fetching.
  */
 public class AsterixClient {
 
+    private static final Logger LOGGER = Logger.getLogger(AsterixClient.class);
     private static final Charset UTF_8 = Charset.forName("UTF-8");
 
     public static final int NUM_FRAMES = 1;
@@ -50,9 +52,15 @@ public class AsterixClient {
     private final IFrame frame;
     private final Queue<String> resultList;
     private final AsterixResultReader resultReader;
-    private final Runnable loadThread;
+    private final Runnable prefetchThread;
     private final Configuration configuration;
 
+    /**
+     * Get AsterixClient for a specific AsterixDB job.
+     *
+     * @param resultReader AstreixDB result reader.
+     * @throws HyracksDataException
+     */
     public AsterixClient(AsterixResultReader resultReader) throws HyracksDataException
     {
         configuration = resultReader.configuration();
@@ -61,7 +69,7 @@ public class AsterixClient {
         frame = new VSizeFrame(new FrameManager(frameSize));
         this.resultReader = resultReader;
         resultList = new LinkedList<>();
-        loadThread = new Runnable() {
+        prefetchThread = new Runnable() {
             @Override
             public void run() {
                 prefetch();
@@ -70,7 +78,12 @@ public class AsterixClient {
         prefetch();
     }
 
-    public int prefetch(){
+    /**
+     * A method used by prefetchThread to get result frames.
+     *
+     * @return number of bytes read.
+     */
+    private int prefetch(){
         int readSize = 0;
         boolean keepReading = true;
         for (int i=0;i<configuration.nFrames() && keepReading;i++) {
@@ -83,6 +96,9 @@ public class AsterixClient {
         return readSize;
     }
 
+    /**
+     * Converts result into a String JSON.
+     */
     private void jsonize() {
         ByteBufferInputStream bbis = new ByteBufferInputStream();
         try {
@@ -104,19 +120,27 @@ public class AsterixClient {
             try {
                 bbis.close();
             } catch (IOException e) {
+                LOGGER.error("Could not close buffer.", e);
             }
         }
 
     }
 
+    /**
+     * Get one tuple from the result buffer.
+     *
+     * @return tuple as a string JSON object.
+     * @throws AsterixConnectorException
+     */
     public String getResultTuple() throws AsterixConnectorException{
         if(resultList.size() == 0 && resultReader.isPartitionReadComplete())
             return null;
         else if(resultList.size() < configuration.prefetchThreshold()) {
-            loadThread.run();
+            prefetchThread.run();
         }
         return resultList.remove();
     }
+
 
     public boolean hasNext() {
         return resultList.size() > 0  || !resultReader.isPartitionReadComplete();

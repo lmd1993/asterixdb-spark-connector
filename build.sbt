@@ -17,39 +17,45 @@
  * under the License.
  */
 import Versions._
-import Settings._
 import sbt._
 
 name := "asterixdb-spark-connector"
 
+scalaVersion := scala
+organization := "org.apache.asterix"
 version := sparkVersion
 
-
-
+//Add local repo to resolvers
 resolvers += Resolver.mavenLocal
 
-libraryDependencies += "org.apache.hyracks" % "hyracks-api" % hyracksVersion excludeAll ExclusionRule(organization = hyracksExclude)
+// Add Spark jars on sbt run
+run in Compile <<= Defaults.runTask(fullClasspath in Compile, mainClass in (Compile, run), runner in (Compile, run))
 
-  libraryDependencies += "org.apache.hyracks" % "hyracks-client" % hyracksVersion excludeAll ExclusionRule(organization = hyracksExclude)
+//Hyracks
+libraryDependencies += "org.apache.hyracks" % "hyracks-api" % hyracksVersion exclude("org.slf4j", "slf4j-jcl")
 
-libraryDependencies += "org.apache.hyracks" % "hyracks-control-nc" % hyracksVersion excludeAll ExclusionRule(organization = hyracksExclude)
+libraryDependencies += "org.apache.hyracks" % "hyracks-client" % hyracksVersion exclude("org.slf4j", "slf4j-jcl")
 
-libraryDependencies += "org.apache.hyracks" % "hyracks-dataflow-common" % hyracksVersion excludeAll ExclusionRule(organization = hyracksExclude)
+libraryDependencies += "org.apache.hyracks" % "hyracks-control-nc" % hyracksVersion exclude("org.slf4j", "slf4j-jcl")
 
-libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % scope
+libraryDependencies += "org.apache.hyracks" % "hyracks-dataflow-common" % hyracksVersion exclude("org.slf4j", "slf4j-jcl")
 
-libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion % scope
+//Spark
+libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % sparkScope
 
-libraryDependencies += "org.apache.spark" %% "spark-streaming" % sparkVersion % scope
+libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion % sparkScope
 
-libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % scope
+libraryDependencies += "org.apache.spark" %% "spark-streaming" % sparkVersion % sparkScope
 
-libraryDependencies += "org.apache.spark" %% "spark-catalyst" % sparkVersion % scope
+libraryDependencies += "org.apache.spark" %% "spark-sql" % sparkVersion % sparkScope
 
-libraryDependencies += "org.apache.spark" %% "spark-hive" % sparkVersion % scope
+libraryDependencies += "org.apache.spark" %% "spark-catalyst" % sparkVersion % sparkScope
+
+libraryDependencies += "org.apache.spark" %% "spark-hive" % sparkVersion % sparkScope
 
 
-libraryDependencies += "org.apache.httpcomponents" % "httpclient" % httpComponentsVersion excludeAll ExclusionRule(organization = httpComponentsExclude)
+//Other
+libraryDependencies += "org.apache.httpcomponents" % "httpclient" % httpComponentsVersion excludeAll ExclusionRule(organization = "org.slf4j")
 
 libraryDependencies += "net.liftweb" %% "lift-json" % liftJsonVersion
 
@@ -60,16 +66,16 @@ libraryDependencies += "org.json" % "json" % orgJsonVersion % "provided"
 excludeFilter in unmanagedResources := HiddenFileFilter || "*properties" || "*xml"
 excludeFilter in unmanagedBase := HiddenFileFilter || "*properties" || "*xml"
 
-//val meta = """META.INF(.)*""".r
 
+val meta = """META.INF(.)*""".r
 assemblyMergeStrategy in assembly := {
   case PathList(ps @ _*) if ps.last endsWith ".RSA" => MergeStrategy.first
-//  case meta(_) => MergeStrategy.discard
-  case "rootdoc.txt" => MergeStrategy.discard
+  case PathList("META-INF", "MANIFEST.MF") => MergeStrategy.discard
+  case meta(_) => MergeStrategy.first
+  case "rootdoc.txt" => MergeStrategy.first
   case x =>
     val oldStrategy = (assemblyMergeStrategy in assembly).value
     oldStrategy(x)
 }
-
 
 publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))

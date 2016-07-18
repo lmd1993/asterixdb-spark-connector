@@ -21,7 +21,7 @@
  * Specify the versions of both Hyracks and Spark
  */
 object Versions {
-  val scalaVersion = "2.10.5"
+  val scala = "2.10.5"
 
   val hyracksVersion = "0.2.18-SNAPSHOT"
   val sparkVersion = "1.6.1"
@@ -29,5 +29,5 @@ object Versions {
   val liftJsonVersion = "2.6.2"
   val orgJsonVersion = "20140107"
   val junitVersion = "4.11"
-  val scope = "provided"
+  val sparkScope = "provided"
 }

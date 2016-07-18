@@ -33,6 +33,16 @@ import org.apache.asterix.connector._
 class SQLContextFunctions(@transient sqlContext:SQLContext)
   extends org.apache.spark.Logging with Serializable {
 
+  private def camelize(value: String): String = {
+    value(0) match  {
+      case '[' =>
+        val arrayType = value.substring(1, value.length - 1).replace("int64", "long")
+        "[" + arrayType(0).toUpper + arrayType.substring(1) + "]"
+
+      case _ => value(0).toUpper + value.substring(1)
+    }
+  }
+
   @transient
   private def admToCaseClass(adm:String): String = {
     println("/*")
@@ -42,12 +52,12 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
     val res = types.map { t =>
       val classNameFields = t.split('{')
 
-      val className = classNameFields(0)(0).toUpper + classNameFields(0).substring(1)
+      val className = camelize(classNameFields(0))
       val fields = classNameFields(1).split(',').map{ f =>
         val nameType = f.split(':')
         val name = nameType(0).replaceAll(" ", "")
 
-        val typeCamelized = nameType(1)(0).toUpper + nameType(1).substring(1)
+        val typeCamelized = camelize(nameType(1))
         val typeString = typeCamelized match {
           case "Int64" => "Long"
           case list if list(0) == '[' => "Array" + list
@@ -73,7 +83,14 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
   def aql(aqlQuery:String, infer:Boolean = false, printCaseClasses:Boolean = false): DataFrame = {
     executeQuery(aqlQuery, QueryType.AQL, infer, printCaseClasses)
   }
-  
+
+  /**
+   * The method takes an AQL query and returns a DataFrame.
+   * @param sqlppQuery AQL query.
+   * @param infer By default AsterixDB will NOT provide the schema.
+   * @param printCaseClasses This will create case classes that represents the schema.
+   * @return
+   */
   def sqlpp(sqlppQuery: String, infer: Boolean = false, printCaseClasses: Boolean = false): DataFrame = {
     executeQuery(sqlppQuery, QueryType.SQLPP, infer, printCaseClasses)
   }

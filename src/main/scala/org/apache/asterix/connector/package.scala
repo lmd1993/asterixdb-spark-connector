@@ -20,6 +20,8 @@ package org.apache.asterix
 
 import org.apache.spark.SparkContext
 
+import scala.language.implicitConversions
+
 /**
  * Makes SparkContext accepts AsterixDB queries using both aql() and sqlpp() methods.
  */

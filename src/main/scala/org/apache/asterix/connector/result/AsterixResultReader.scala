@@ -53,7 +53,7 @@ class AsterixResultReader(
     netManager.start()
     val socketAddress = new InetSocketAddress(addressPortPair.address, addressPortPair.port.toInt)
     val inputChannel = new DatasetNetworkInputChannel(netManager, socketAddress,handle.jobId,
-      handle.resultSetId, partition, configuration.frameSize)
+      handle.resultSetId, partition, configuration.nReaders)
     inputChannel.registerMonitor(monitor)
 
     inputChannel.open(datasetClientContext)

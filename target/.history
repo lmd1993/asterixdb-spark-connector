@@ -33,3 +33,13 @@ help
 projects
 tasks
 run
+?
+:help
+help
+project
+projects
+org.apache.asterix.connector.example
+show
+run
+exit
+run

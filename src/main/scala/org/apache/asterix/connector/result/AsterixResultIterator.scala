@@ -26,13 +26,13 @@ package org.apache.asterix.connector.result
  */
 class AsterixResultIterator[String] (resultReader: AsterixResultReader) extends Iterator[String] {
 
-  private[this] val resultUtils = new AsterixClient(resultReader)
+  private[this] val resultClient = new AsterixClient(resultReader)
 
   /**
    * Converts [[java.lang.String]] to [[String]]
    * @return
    */
-  override def next(): String = resultUtils.getResultTuple.asInstanceOf[String]
+  override def next(): String = resultClient.getResultTuple.asInstanceOf[String]
 
-  override def hasNext: Boolean = resultUtils.hasNext
+  override def hasNext: Boolean = resultClient.hasNext
 }

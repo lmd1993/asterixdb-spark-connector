@@ -22,7 +22,7 @@ package org.apache.asterix.connector
  * AsterixDB-Spark connector configurations.
  */
 
-class Configuration(val host: String,
+final class Configuration(val host: String,
                     val port: String,
                     val frameSize: Int,
                     val nFrames: Int,

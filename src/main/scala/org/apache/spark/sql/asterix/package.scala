@@ -18,6 +18,8 @@
  */
 package org.apache.spark.sql
 
+import scala.language.implicitConversions
+
 /**
  * Makes Spark SQLContext accepts AsterixDB queries.
  */

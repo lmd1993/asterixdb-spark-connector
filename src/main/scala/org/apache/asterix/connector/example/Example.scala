@@ -43,7 +43,7 @@ object Example {
               |let $exampleSet := [
               | {"name" : "Ann", "age" : 20, "salary" : 100000},
               | {"name" : "Bob", "age" : 30, "salary" : 200000},
-              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependencies" : [1, 2, 3]}
+              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependents" : [1, 2, 3]}
               |]
               |for $x in $exampleSet
               |return $x
@@ -54,7 +54,7 @@ object Example {
               | FROM [
               | {"name" : "Ann", "age" : 20, "salary" : 100000},
               | {"name" : "Bob", "age" : 30, "salary" : 200000},
-              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependencies" : [1, 2, 3]}
+              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependents" : [1, 2, 3]}
               | ] as exampleSet;
               | """.stripMargin
 
@@ -68,6 +68,7 @@ object Example {
       .set("spark.asterix.connection.host", "localhost") //AsterixDB API host
       .set("spark.asterix.connection.port", "19002") //AsterixDB API port
       .set("spark.asterix.frame.size", "32768") //AsterixDB configured frame size
+      .set("spark.driver.memory", "1g")
       .setAppName("AsterixDB-Spark Connector Example")
 
     //Initialize SparkContext with AsterixDB configuration
@@ -86,11 +87,10 @@ object Example {
     /* Get AstreixRDD from SparkContext using AQL query.
      * You can use sqlpp() to get the result from running SQL++ query.
      */
+      val rddAql = sc.aql(aqlQuery)
 
-    val rddAql = sc.aql(aqlQuery)
-
-    println("AQL result")
-    rddAql.collect().foreach(println)
+      println("AQL result")
+      rddAql.collect().foreach(println)
   }
 
   /**
@@ -123,5 +123,6 @@ object Example {
     init()
     runAsterixRDD()
     runAsterixWithDataFrame()
+    sc.stop()
   }
 }
