@@ -1,4 +1,5 @@
 bin
+resources/
 target/resolution-cache
 target/streams
 target/scala-2.10/.history
