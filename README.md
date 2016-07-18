@@ -85,6 +85,6 @@ bin/spark-shell [--master Spark master address or ignore for local run] \\
 
 ###Example
 Please see the following:
-- [AQL and SQL++ example.](https://github.com/Nullification/asterixdb-spark-connector/blob/master/src/main/scala/org/apache/asterix/connector/example/Example.scala)
-- Using [Apache Zeppelin.](zeppelin.apache.org)
-- - [Load zeppelin-notebook example.](https://github.com/Nullification/asterixdb-spark-connector/tree/master/zeppelin-notebook/asterixdb-spark-example)
+##### [AQL and SQL++ example.](https://github.com/Nullification/asterixdb-spark-connector/blob/master/src/main/scala/org/apache/asterix/connector/example/Example.scala)
+##### Using [Apache Zeppelin.](zeppelin.apache.org)
+-  [Load zeppelin-notebook example.](https://github.com/Nullification/asterixdb-spark-connector/tree/master/zeppelin-notebook/asterixdb-spark-example)
