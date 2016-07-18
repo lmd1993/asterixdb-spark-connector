@@ -73,8 +73,6 @@ object Example {
 
     //Initialize SparkContext with AsterixDB configuration
     sc = new SparkContext(conf)
-
-
   }
 
   /**
@@ -112,7 +110,6 @@ object Example {
     println("SQL++ DataFrame result")
     dfSqlpp.printSchema()
     dfSqlpp.show()
-
   }
 
   /**

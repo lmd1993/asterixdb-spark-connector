@@ -82,3 +82,9 @@ bin/spark-shell [--master Spark master address or ignore for local run] \\
 --conf spark.asterix.connection.port=ASTERIXDB_PORT \\
 --conf spark.asterix.frame.size=ASTERIXDB_FRAME_SIZE \\
 ```
+
+###Example
+Please see the following:
+- [AQL and SQL++ example.](https://github.com/Nullification/asterixdb-spark-connector/blob/master/src/main/scala/org/apache/asterix/connector/example/Example.scala)
+- Using [Apache Zeppelin.](zeppelin.apache.org)
+- - [Load zeppelin-notebook example.](https://github.com/Nullification/asterixdb-spark-connector/tree/master/zeppelin-notebook/asterixdb-spark-example)
