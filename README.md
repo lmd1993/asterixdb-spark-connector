@@ -90,7 +90,9 @@ Please see the following:
 -  [Load zeppelin-notebook example.](https://github.com/Nullification/asterixdb-spark-connector/tree/master/zeppelin-notebook/asterixdb-spark-example)
 
 ##### Add the connector to Spark Interpreter in Apache Zeppelin
- ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "AsterixDB-Spark Connector with Apache Zeppelin")
- ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "AsterixDB-Spark Connector with Apache Zeppelin")
- ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "AsterixDB-Spark Connector with Apache Zeppelin")
+ ![alt text](https://raw.githubusercontent.com/Nullification/asterixdb-spark-connector/master/zeppelin-notebook/1.png "AsterixDB-Spark Connector with Apache Zeppelin")
+ 
+ ![alt text](https://raw.githubusercontent.com/Nullification/asterixdb-spark-connector/master/zeppelin-notebook/2.png "AsterixDB-Spark Connector with Apache Zeppelin")
+ 
+ ![alt text](https://raw.githubusercontent.com/Nullification/asterixdb-spark-connector/master/zeppelin-notebook/3.png "AsterixDB-Spark Connector with Apache Zeppelin")
 
