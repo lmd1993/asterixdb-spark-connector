@@ -35,7 +35,7 @@
         <span class="kind">class</span>
       </span>
       <span class="symbol">
-        <span class="name">SQLContextFunctions</span><span class="result"> extends <span class="extype" name="org.apache.spark.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+        <span class="name">SQLContextFunctions</span><span class="result"> extends <span class="extype" name="org.apache.spark.internal.Logging">Logging</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
@@ -43,7 +43,7 @@
 using both aql() and sqlpp() methods.</p><p>It also adds the ability to let AsterixDB infer the schema without any additional pass.
 </p></div><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.apache.spark.Logging">Logging</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="org.apache.spark.internal.Logging">Logging</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -61,7 +61,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.apache.spark.sql.asterix.SQLContextFunctions"><span>SQLContextFunctions</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.apache.spark.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.apache.spark.sql.asterix.SQLContextFunctions"><span>SQLContextFunctions</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="org.apache.spark.internal.Logging"><span>Logging</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -178,7 +178,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">aql</span><span class="params">(<span name="aqlQuery">aqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
+        <span class="name">aql</span><span class="params">(<span name="aqlQuery">aqlQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../package.html#DataFrame=org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]" class="extmbr" name="org.apache.spark.sql.DataFrame">DataFrame</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">The method takes an AQL query and returns a DataFrame.</p><div class="fullcomment"><div class="comment cmt"><p>The method takes an AQL query and returns a DataFrame.</p></div><dl class="paramcmts block"><dt class="param">aqlQuery</dt><dd class="cmt"><p>AQL query.</p></dd><dt class="param">infer</dt><dd class="cmt"><p>By default AsterixDB will NOT provide the schema.</p></dd><dt class="param">printCaseClasses</dt><dd class="cmt"><p>This will create case classes that represents the schema.</p></dd><dt>returns</dt><dd class="cmt"><p>
@@ -289,6 +289,19 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.apache.spark.internal.Logging#initializeLogIfNecessary" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="initializeLogIfNecessary(isInterpreter:Boolean):Unit"></a>
+      <a id="initializeLogIfNecessary(Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">initializeLogIfNecessary</span><span class="params">(<span name="isInterpreter">isInterpreter: <span class="extype" name="scala.Boolean">Boolean</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -302,7 +315,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#isTraceEnabled" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#isTraceEnabled" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isTraceEnabled():Boolean"></a>
       <a id="isTraceEnabled():Boolean"></a>
       <h4 class="signature">
@@ -315,7 +328,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#log" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="log:org.slf4j.Logger"></a>
       <a id="log:Logger"></a>
       <h4 class="signature">
@@ -328,7 +341,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logDebug(msg:=&gt;String,throwable:Throwable):Unit"></a>
       <a id="logDebug(⇒String,Throwable):Unit"></a>
       <h4 class="signature">
@@ -341,7 +354,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logDebug" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logDebug(msg:=&gt;String):Unit"></a>
       <a id="logDebug(⇒String):Unit"></a>
       <h4 class="signature">
@@ -354,7 +367,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logError(msg:=&gt;String,throwable:Throwable):Unit"></a>
       <a id="logError(⇒String,Throwable):Unit"></a>
       <h4 class="signature">
@@ -367,7 +380,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logError" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logError(msg:=&gt;String):Unit"></a>
       <a id="logError(⇒String):Unit"></a>
       <h4 class="signature">
@@ -380,7 +393,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logInfo(msg:=&gt;String,throwable:Throwable):Unit"></a>
       <a id="logInfo(⇒String,Throwable):Unit"></a>
       <h4 class="signature">
@@ -393,7 +406,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logInfo" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logInfo(msg:=&gt;String):Unit"></a>
       <a id="logInfo(⇒String):Unit"></a>
       <h4 class="signature">
@@ -406,7 +419,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logName" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logName:String"></a>
       <a id="logName:String"></a>
       <h4 class="signature">
@@ -419,7 +432,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logTrace(msg:=&gt;String,throwable:Throwable):Unit"></a>
       <a id="logTrace(⇒String,Throwable):Unit"></a>
       <h4 class="signature">
@@ -432,7 +445,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logTrace" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logTrace(msg:=&gt;String):Unit"></a>
       <a id="logTrace(⇒String):Unit"></a>
       <h4 class="signature">
@@ -445,7 +458,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logWarning(msg:=&gt;String,throwable:Throwable):Unit"></a>
       <a id="logWarning(⇒String,Throwable):Unit"></a>
       <h4 class="signature">
@@ -458,7 +471,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected </dd><dt>Definition Classes</dt><dd>Logging</dd></dl></div>
-    </li><li name="org.apache.spark.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+    </li><li name="org.apache.spark.internal.Logging#logWarning" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="logWarning(msg:=&gt;String):Unit"></a>
       <a id="logWarning(⇒String):Unit"></a>
       <h4 class="signature">
@@ -510,6 +523,38 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="org.apache.spark.sql.asterix.SQLContextFunctions#showAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="showAll(infer:Boolean,printCaseClasses:Boolean):org.apache.spark.sql.DataFrame"></a>
+      <a id="showAll(Boolean,Boolean):DataFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">showAll</span><span class="params">(<span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../package.html#DataFrame=org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]" class="extmbr" name="org.apache.spark.sql.DataFrame">DataFrame</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@transient</span><span class="args">()</span>
+              
+        </dd></dl></div>
+    </li><li name="org.apache.spark.sql.asterix.SQLContextFunctions#showSchema" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="showSchema(Dataverse:String,Dataset:String,infer:Boolean,printCaseClasses:Boolean):Unit"></a>
+      <a id="showSchema(String,String,Boolean,Boolean):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">showSchema</span><span class="params">(<span name="Dataverse">Dataverse: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="Dataset">Dataset: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@transient</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="org.apache.spark.sql.asterix.SQLContextFunctions#sqlpp" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="sqlpp(sqlppQuery:String,infer:Boolean,printCaseClasses:Boolean):org.apache.spark.sql.DataFrame"></a>
       <a id="sqlpp(String,Boolean,Boolean):DataFrame"></a>
@@ -519,7 +564,7 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
         <span class="kind">def</span>
       </span>
       <span class="symbol">
-        <span class="name">sqlpp</span><span class="params">(<span name="sqlppQuery">sqlppQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
+        <span class="name">sqlpp</span><span class="params">(<span name="sqlppQuery">sqlppQuery: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../package.html#DataFrame=org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]" class="extmbr" name="org.apache.spark.sql.DataFrame">DataFrame</a></span>
       </span>
       </h4>
       <p class="shortcomment cmt">The method takes an AQL query and returns a DataFrame.</p><div class="fullcomment"><div class="comment cmt"><p>The method takes an AQL query and returns a DataFrame.</p></div><dl class="paramcmts block"><dt class="param">sqlppQuery</dt><dd class="cmt"><p>AQL query.</p></dd><dt class="param">infer</dt><dd class="cmt"><p>By default AsterixDB will NOT provide the schema.</p></dd><dt class="param">printCaseClasses</dt><dd class="cmt"><p>This will create case classes that represents the schema.</p></dd><dt>returns</dt><dd class="cmt"><p>
@@ -550,6 +595,22 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="org.apache.spark.sql.asterix.SQLContextFunctions#useDataset" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="useDataset(Dataverse:String,Dataset:String,infer:Boolean,printCaseClasses:Boolean):org.apache.spark.sql.DataFrame"></a>
+      <a id="useDataset(String,String,Boolean,Boolean):DataFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">useDataset</span><span class="params">(<span name="Dataverse">Dataverse: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="Dataset">Dataset: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="infer">infer: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>, <span name="printCaseClasses">printCaseClasses: <span class="extype" name="scala.Boolean">Boolean</span> = <span class="symbol">false</span></span>)</span><span class="result">: <a href="../package.html#DataFrame=org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]" class="extmbr" name="org.apache.spark.sql.DataFrame">DataFrame</a></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
+                <span class="name">@transient</span><span class="args">()</span>
+              
+        </dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -620,8 +681,8 @@ using both aql() and sqlpp() methods.</p><p>It also adds the ability to let Aste
               <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
-            </div><div class="parent" name="org.apache.spark.Logging">
-              <h3>Inherited from <span class="extype" name="org.apache.spark.Logging">Logging</span></h3>
+            </div><div class="parent" name="org.apache.spark.internal.Logging">
+              <h3>Inherited from <span class="extype" name="org.apache.spark.internal.Logging">Logging</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

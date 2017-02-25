@@ -28,7 +28,6 @@ import org.apache.hyracks.api.dataset.IDatasetInputChannelMonitor
 import org.apache.hyracks.client.dataset.DatasetClientContext
 import org.apache.hyracks.client.net.ClientNetworkManager
 import org.apache.hyracks.comm.channels.DatasetNetworkInputChannel
-import org.apache.spark.Logging
 
 /**
  * AsterixDB result reader. This class is responsible to fetch result (tuple-by-tuple)
@@ -44,15 +43,15 @@ class AsterixResultReader(
   partition: Int,
   handle: Handle,
   val configuration: Configuration)
-  extends Serializable with Logging{
+  extends Serializable with org.apache.spark.internal.Logging{
 
   private val netManager = new ClientNetworkManager(configuration.nReaders)
   private val datasetClientContext = new DatasetClientContext(configuration.frameSize)
   private val monitor : IDatasetInputChannelMonitor = new DatasetInputChannelMonitor
   private val resultChannel = {
     netManager.start()
-    val socketAddress = new InetSocketAddress(addressPortPair.address, addressPortPair.port.toInt)
-    val inputChannel = new DatasetNetworkInputChannel(netManager, socketAddress,handle.jobId,
+    val compute = new InetSocketAddress(addressPortPair.address, addressPortPair.port.toInt)
+    val inputChannel = new DatasetNetworkInputChannel(netManager, compute,handle.jobId,
       handle.resultSetId, partition, configuration.nReaders)
     inputChannel.registerMonitor(monitor)
 

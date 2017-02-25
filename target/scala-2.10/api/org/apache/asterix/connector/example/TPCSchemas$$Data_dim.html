@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>LocationPartition - org.apache.asterix.connector.rdd.LocationPartition</title>
-          <meta name="description" content="LocationPartition - org.apache.asterix.connector.rdd.LocationPartition" />
-          <meta name="keywords" content="LocationPartition org.apache.asterix.connector.rdd.LocationPartition" />
+          <title>Data_dim - org.apache.asterix.connector.example.TPCSchemas.Data_dim</title>
+          <meta name="description" content="Data dim - org.apache.asterix.connector.example.TPCSchemas.Data dim" />
+          <meta name="keywords" content="Data dim org.apache.asterix.connector.example.TPCSchemas.Data dim" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'org.apache.asterix.connector.rdd.LocationPartition';
+            var hash = 'org.apache.asterix.connector.example.TPCSchemas$$Data_dim';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -24,27 +24,24 @@
         </head>
         <body class="type">
       <div id="definition">
-        <img src="../../../../../lib/trait_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.asterix">asterix</a>.<a href="../package.html" class="extype" name="org.apache.asterix.connector">connector</a>.<a href="package.html" class="extype" name="org.apache.asterix.connector.rdd">rdd</a></p>
-        <h1>LocationPartition</h1>
+        <img src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.asterix">asterix</a>.<a href="../package.html" class="extype" name="org.apache.asterix.connector">connector</a>.<a href="package.html" class="extype" name="org.apache.asterix.connector.example">example</a>.<a href="TPCSchemas$.html" class="extype" name="org.apache.asterix.connector.example.TPCSchemas">TPCSchemas</a></p>
+        <h1>Data_dim</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">trait</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">LocationPartition</span><span class="result"> extends <span class="extype" name="org.apache.spark.Partition">Partition</span></span>
+        <span class="name">Data_dim</span><span class="params">(<span name="d_date_sk">d_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date_id">d_date_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date">d_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_month_seq">d_month_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_week_seq">d_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_seq">d_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_year">d_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dow">d_dow: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_moy">d_moy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dom">d_dom: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_qoy">d_qoy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_year">d_fy_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_quarter_seq">d_fy_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_week_seq">d_fy_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_day_name">d_day_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_name">d_quarter_name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
           <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="org.apache.spark.Partition">Partition</span>, <span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
-        </div><div class="toggleContainer block">
-          <span class="toggle">Known Subclasses</span>
-          <div class="subClasses hiddenContent"><a href="AsterixPartition.html" class="extype" name="org.apache.asterix.connector.rdd.AsterixPartition">AsterixPartition</a></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -62,7 +59,7 @@
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.apache.asterix.connector.rdd.LocationPartition"><span>LocationPartition</span></li><li class="in" name="org.apache.spark.Partition"><span>Partition</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.apache.asterix.connector.example.TPCSchemas.Data_dim"><span>Data_dim</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -80,30 +77,30 @@
 
       <div id="template">
         <div id="allMembers">
-        
-
-        
-
-        <div id="values" class="values members">
-              <h3>Abstract Value Members</h3>
-              <ol><li name="org.apache.spark.Partition#index" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
-      <a id="index:Int"></a>
-      <a id="index:Int"></a>
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(d_date_sk:String,d_date_id:String,d_date:String,d_month_seq:String,d_week_seq:String,d_quarter_seq:String,d_year:String,d_dow:String,d_moy:String,d_dom:String,d_qoy:String,d_fy_year:String,d_fy_quarter_seq:String,d_fy_week_seq:String,d_day_name:String,d_quarter_name:String):org.apache.asterix.connector.example.TPCSchemas.Data_dim"></a>
+      <a id="&lt;init&gt;:Data_dim"></a>
       <h4 class="signature">
       <span class="modifier_kind">
-        <span class="modifier">abstract </span>
-        <span class="kind">def</span>
+        <span class="modifier"></span>
+        <span class="kind">new</span>
       </span>
       <span class="symbol">
-        <span class="name">index</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+        <span class="name">Data_dim</span><span class="params">(<span name="d_date_sk">d_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date_id">d_date_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date">d_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_month_seq">d_month_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_week_seq">d_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_seq">d_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_year">d_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dow">d_dow: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_moy">d_moy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dom">d_dom: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_qoy">d_qoy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_year">d_fy_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_quarter_seq">d_fy_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_week_seq">d_fy_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_day_name">d_day_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_name">d_quarter_name: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
       </span>
       </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Partition</dd></dl></div>
+      
     </li></ol>
             </div>
 
+        
+
+        
+
         <div id="values" class="values members">
-              <h3>Concrete Value Members</h3>
+              <h3>Value Members</h3>
               <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="!=(x$1:AnyRef):Boolean"></a>
       <a id="!=(AnyRef):Boolean"></a>
@@ -201,6 +198,214 @@
     </span>)</span>
               
         </dd></dl></div>
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_date" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_date:String"></a>
+      <a id="d_date:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_date</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_date_id" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_date_id:String"></a>
+      <a id="d_date_id:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_date_id</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_date_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_date_sk:String"></a>
+      <a id="d_date_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_date_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_day_name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_day_name:String"></a>
+      <a id="d_day_name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_day_name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_dom" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_dom:String"></a>
+      <a id="d_dom:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_dom</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_dow" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_dow:String"></a>
+      <a id="d_dow:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_dow</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_fy_quarter_seq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_fy_quarter_seq:String"></a>
+      <a id="d_fy_quarter_seq:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_fy_quarter_seq</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_fy_week_seq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_fy_week_seq:String"></a>
+      <a id="d_fy_week_seq:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_fy_week_seq</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_fy_year" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_fy_year:String"></a>
+      <a id="d_fy_year:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_fy_year</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_month_seq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_month_seq:String"></a>
+      <a id="d_month_seq:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_month_seq</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_moy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_moy:String"></a>
+      <a id="d_moy:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_moy</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_qoy" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_qoy:String"></a>
+      <a id="d_qoy:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_qoy</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_quarter_name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_quarter_name:String"></a>
+      <a id="d_quarter_name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_quarter_name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_quarter_seq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_quarter_seq:String"></a>
+      <a id="d_quarter_seq:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_quarter_seq</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_week_seq" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_week_seq:String"></a>
+      <a id="d_week_seq:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_week_seq</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim#d_year" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="d_year:String"></a>
+      <a id="d_year:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">d_year</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="eq(x$1:AnyRef):Boolean"></a>
       <a id="eq(AnyRef):Boolean"></a>
@@ -214,19 +419,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.apache.spark.Partition#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(other:Any):Boolean"></a>
-      <a id="equals(Any):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="other">other: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Partition → AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -259,19 +451,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.apache.spark.Partition#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hashCode():Int"></a>
-      <a id="hashCode():Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Partition → AnyRef → Any</dd></dl></div>
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -337,19 +516,6 @@
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="toString():String"></a>
-      <a id="toString():String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -416,12 +582,14 @@
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="org.apache.spark.Partition">
-              <h3>Inherited from <span class="extype" name="org.apache.spark.Partition">Partition</span></h3>
-            </div><div class="parent" name="scala.Serializable">
+        <div class="parent" name="scala.Serializable">
               <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
             </div><div class="parent" name="java.io.Serializable">
               <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
             </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">

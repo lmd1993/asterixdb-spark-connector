@@ -28,6 +28,7 @@ import org.apache.http.impl.client.{CloseableHttpClient, HttpClients}
 import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
 import org.apache.hyracks.api.dataset.ResultSetId
 import org.apache.hyracks.api.job.JobId
+import org.apache.spark.internal.Logging
 import QueryType._
 import net.liftweb.json._
 import net.liftweb.json.Serialization._
@@ -45,7 +46,7 @@ private[this] case class HandleJson(handle: Seq[Long])
  * AsterixDB HTTP API interface.
  * @param configuration Connector configuration
  */
-class AsterixHttpAPI(configuration: Configuration) extends org.apache.spark.Logging {
+class AsterixHttpAPI(configuration: Configuration) extends  Logging {
 
   private val apiURL = s"http://${configuration.host}:${configuration.port}/"
 

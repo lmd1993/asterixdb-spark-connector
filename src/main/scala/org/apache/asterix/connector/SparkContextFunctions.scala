@@ -22,7 +22,7 @@ import org.apache.asterix.connector.QueryType.QueryType
 import org.apache.asterix.connector.rdd.AsterixRDD
 import org.apache.asterix.connector.result.AsterixClient
 import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
-import org.apache.spark.{Logging, SparkContext}
+import org.apache.spark.SparkContext
 
 import scala.util.{Failure, Success, Try}
 
@@ -30,7 +30,7 @@ import scala.util.{Failure, Success, Try}
  * This class extends SparkContext (implicitly) to query AsterixDB.
  * @param sc SparkContext
  */
-class SparkContextFunctions(@transient sc: SparkContext) extends Serializable with Logging{
+class SparkContextFunctions(@transient sc: SparkContext) extends Serializable with org.apache.spark.internal.Logging{
 
   private val WaitTime = 100;
   private val configuration: Configuration = {
@@ -79,7 +79,6 @@ class SparkContextFunctions(@transient sc: SparkContext) extends Serializable wi
   def aql(aql:String): AsterixRDD = {
     executeQuery(aql, QueryType.AQL)
   }
-
   def sqlpp(sqlpp:String): AsterixRDD = {
     executeQuery(sqlpp, QueryType.SQLPP)
   }

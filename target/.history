@@ -43,3 +43,13 @@ show
 run
 exit
 run
+compile
+assembly
+compile
+package
+publish
+compile
+assembly
+package
+assembly
+publish

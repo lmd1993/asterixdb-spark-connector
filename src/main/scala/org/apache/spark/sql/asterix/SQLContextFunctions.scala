@@ -31,7 +31,7 @@ import org.apache.asterix.connector._
  * @param sqlContext Spark SQLContext
  */
 class SQLContextFunctions(@transient sqlContext:SQLContext)
-  extends org.apache.spark.Logging with Serializable {
+  extends org.apache.spark.internal.Logging with Serializable {
 
   private def camelize(value: String): String = {
     value(0) match  {
@@ -71,7 +71,35 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
     }.reduceLeft(_ + _)
     res
   }
-
+  /*
+   *The method is to return all the dataverse and all the data set information
+   */
+  @transient
+  def showAll(infer:Boolean = false, printCaseClasses:Boolean = false):DataFrame={
+    val aqlQuery="""
+                   |for $x in dataset Metadata.Dataset return{
+                   | "DataverseName":$x.DataverseName,
+                   |"DatasetName":$x.DatasetName
+                   |};
+                   | """.stripMargin
+    executeQuery(aqlQuery, QueryType.AQL, infer, printCaseClasses)
+  }
+  /*
+ *The method is to return the dataset's schema
+ */
+  @transient
+  def showSchema(Dataverse:String, Dataset:String, infer:Boolean = false, printCaseClasses:Boolean = false): scala.Unit={
+    val aqlQuery=" use dataverse "+ Dataverse+"; for $i in dataset "+Dataset+" limit 2 return $i;"
+    executeQuery(aqlQuery, QueryType.AQL, infer, printCaseClasses).printSchema
+  }
+  /*
+  *The method is to return the dataset's schema
+  */
+  @transient
+  def useDataset(Dataverse:String, Dataset:String, infer:Boolean = false, printCaseClasses:Boolean = false): DataFrame={
+    val aqlQuery=" use dataverse "+ Dataverse+"; for $i in dataset "+Dataset+" limit 2 return $i;"
+    executeQuery(aqlQuery, QueryType.AQL, infer, printCaseClasses)
+  }
   /**
    * The method takes an AQL query and returns a DataFrame.
    * @param aqlQuery AQL query.

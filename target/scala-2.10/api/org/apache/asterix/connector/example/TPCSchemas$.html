@@ -1,0 +1,634 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+        <head>
+          <title>TPCSchemas - org.apache.asterix.connector.example.TPCSchemas</title>
+          <meta name="description" content="TPCSchemas - org.apache.asterix.connector.example.TPCSchemas" />
+          <meta name="keywords" content="TPCSchemas org.apache.asterix.connector.example.TPCSchemas" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../../index.html';
+            var hash = 'org.apache.asterix.connector.example.TPCSchemas$';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img src="../../../../../lib/object_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.asterix">asterix</a>.<a href="../package.html" class="extype" name="org.apache.asterix.connector">connector</a>.<a href="package.html" class="extype" name="org.apache.asterix.connector.example">example</a></p>
+        <h1>TPCSchemas</h1>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <span class="name">TPCSchemas</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>Created by MingdaLi on 1/4/17.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+        </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="org.apache.asterix.connector.example.TPCSchemas"><span>TPCSchemas</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+            <a href="http://docs.scala-lang.org/overviews/scaladoc/usage.html#members" target="_blank">Learn more about member selection</a>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="org.apache.asterix.connector.example.TPCSchemas.CatalogReturns" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CatalogReturnsextendsProductwithSerializable"></a>
+      <a id="CatalogReturns:CatalogReturns"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$CatalogReturns.html"><span class="name">CatalogReturns</span></a><span class="params">(<span name="cr_returned_date_sk">cr_returned_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_return_time_sk">cr_return_time_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_item_sk">cr_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_refunded_customer_sk">cr_refunded_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_refunded_cdemo_sk">cr_refunded_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_refunded_hdemo_sk">cr_refunded_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_refunded_addr_sk">cr_refunded_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_returning_customer_sk">cr_returning_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_returning_cdemo_sk">cr_returning_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_returning_hdemo_sk">cr_returning_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_returning_addr_sk">cr_returning_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_call_center_sk">cr_call_center_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_catalog_page_sk">cr_catalog_page_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_ship_mode_sk">cr_ship_mode_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_warehouse_sk">cr_warehouse_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_reason_sk">cr_reason_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cr_order_number">cr_order_number: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.CatalogSales" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CatalogSalesextendsProductwithSerializable"></a>
+      <a id="CatalogSales:CatalogSales"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$CatalogSales.html"><span class="name">CatalogSales</span></a><span class="params">(<span name="cs_sold_date_sk">cs_sold_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_sold_time_sk">cs_sold_time_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_date_sk">cs_ship_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_bill_customer_sk">cs_bill_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_bill_cdemo_sk">cs_bill_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_bill_hdemo_sk">cs_bill_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_bill_addr_sk">cs_bill_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_customer_sk">cs_ship_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_cdemo_sk">cs_ship_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_hdemo_sk">cs_ship_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_addr_sk">cs_ship_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_call_center_sk">cs_call_center_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_catalog_page_sk">cs_catalog_page_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_ship_mode_sk">cs_ship_mode_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_warehouse_sk">cs_warehouse_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_item_sk">cs_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_promo_sk">cs_promo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_order_number">cs_order_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_quantity">cs_quantity: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cs_wholesale_cost">cs_wholesale_cost: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="CustomerextendsProductwithSerializable"></a>
+      <a id="Customer:Customer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Customer.html"><span class="name">Customer</span></a><span class="params">(<span name="c_customer_sk">c_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_customer_id">c_customer_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_cdemo_sk">c_current_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_hdemo_sk">c_current_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_addr_sk">c_current_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_shipto_date_sk">c_first_shipto_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_sales_date_sk">c_first_sales_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_salutation">c_salutation: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_name">c_first_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_last_name">c_last_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_preferred_cust_flag">c_preferred_cust_flag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_day">c_birth_day: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_month">c_birth_month: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_year">c_birth_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_country">c_birth_country: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_login">c_login: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer_address" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Customer_addressextendsProductwithSerializable"></a>
+      <a id="Customer_address:Customer_address"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Customer_address.html"><span class="name">Customer_address</span></a><span class="params">(<span name="ca_address_sk">ca_address_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_address_id">ca_address_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_street_number">ca_street_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_street_name">ca_street_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_street_type">ca_street_type: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_suite_number">ca_suite_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_city">ca_city: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_county">ca_county: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_state">ca_state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_zip">ca_zip: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_country">ca_country: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_gmt_offset">ca_gmt_offset: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ca_location_type">ca_location_type: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer_demographics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Customer_demographicsextendsProductwithSerializable"></a>
+      <a id="Customer_demographics:Customer_demographics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Customer_demographics.html"><span class="name">Customer_demographics</span></a><span class="params">(<span name="cd_demo_sk">cd_demo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_gender">cd_gender: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_marital_status">cd_marital_status: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_education_status">cd_education_status: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_purchase_estimate">cd_purchase_estimate: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_credit_rating">cd_credit_rating: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_dep_count">cd_dep_count: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_dep_employed_count">cd_dep_employed_count: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="cd_dep_college_count">cd_dep_college_count: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Data_dim" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Data_dimextendsProductwithSerializable"></a>
+      <a id="Data_dim:Data_dim"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Data_dim.html"><span class="name">Data_dim</span></a><span class="params">(<span name="d_date_sk">d_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date_id">d_date_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_date">d_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_month_seq">d_month_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_week_seq">d_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_seq">d_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_year">d_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dow">d_dow: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_moy">d_moy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_dom">d_dom: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_qoy">d_qoy: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_year">d_fy_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_quarter_seq">d_fy_quarter_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_fy_week_seq">d_fy_week_seq: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_day_name">d_day_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="d_quarter_name">d_quarter_name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Household_demographics" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="Household_demographicsextendsProductwithSerializable"></a>
+      <a id="Household_demographics:Household_demographics"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Household_demographics.html"><span class="name">Household_demographics</span></a><span class="params">(<span name="hd_demo_sk">hd_demo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="hd_income_band_sk">hd_income_band_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="hd_buy_potential">hd_buy_potential: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="hd_dep_count">hd_dep_count: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="hd_vehicle_count">hd_vehicle_count: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Inventory" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="InventoryextendsProductwithSerializable"></a>
+      <a id="Inventory:Inventory"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Inventory.html"><span class="name">Inventory</span></a><span class="params">(<span name="inv_date_sk">inv_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inv_item_sk">inv_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inv_warehouse_sk">inv_warehouse_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="inv_quantity_on_hand">inv_quantity_on_hand: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Item" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="ItemextendsProductwithSerializable"></a>
+      <a id="Item:Item"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Item.html"><span class="name">Item</span></a><span class="params">(<span name="i_item_sk">i_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_item_id">i_item_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_rec_start_date">i_rec_start_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_rec_end_date">i_rec_end_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_item_desc">i_item_desc: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_current_price">i_current_price: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_wholesale_cost">i_wholesale_cost: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_brand_id">i_brand_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_brand">i_brand: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_manufact_id">i_manufact_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_size">i_size: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_color">i_color: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_units">i_units: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_manager_id">i_manager_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="i_product_name">i_product_name: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Promotion" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="PromotionextendsProductwithSerializable"></a>
+      <a id="Promotion:Promotion"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Promotion.html"><span class="name">Promotion</span></a><span class="params">(<span name="p_promo_sk">p_promo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_promo_id">p_promo_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_start_date_sk">p_start_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_end_date_sk">p_end_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_item_sk">p_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_cost">p_cost: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_response_target">p_response_target: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_promo_name">p_promo_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_dmail">p_channel_dmail: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_email">p_channel_email: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_catalog">p_channel_catalog: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_tv">p_channel_tv: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_radio">p_channel_radio: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_press">p_channel_press: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_event">p_channel_event: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_demo">p_channel_demo: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_channel_details">p_channel_details: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_purpose">p_purpose: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="p_discount_active">p_discount_active: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Store" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StoreextendsProductwithSerializable"></a>
+      <a id="Store:Store"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Store.html"><span class="name">Store</span></a><span class="params">(<span name="s_store_sk">s_store_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_store_id">s_store_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_rec_start_date">s_rec_start_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_rec_end_date">s_rec_end_date: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_closed_date_sk">s_closed_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_store_name">s_store_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_division_id">s_division_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_division_name">s_division_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_company_id">s_company_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_company_name">s_company_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_street_number">s_street_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_street_name">s_street_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_street_type">s_street_type: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_suite_number">s_suite_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_city">s_city: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_county">s_county: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_state">s_state: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="s_zip">s_zip: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.StoreReturns" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StoreReturnsextendsProductwithSerializable"></a>
+      <a id="StoreReturns:StoreReturns"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$StoreReturns.html"><span class="name">StoreReturns</span></a><span class="params">(<span name="sr_returned_date_sk">sr_returned_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_return_time_sk">sr_return_time_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_item_sk">sr_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_customer_sk">sr_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_cdemo_sk">sr_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_hdemo_sk">sr_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_addr_sk">sr_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_store_sk">sr_store_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_reason_sk">sr_reason_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="sr_ticket_number">sr_ticket_number: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.StoreSales" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="StoreSalesextendsProductwithSerializable"></a>
+      <a id="StoreSales:StoreSales"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$StoreSales.html"><span class="name">StoreSales</span></a><span class="params">(<span name="ss_sold_date_sk">ss_sold_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_sold_time_sk">ss_sold_time_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_item_sk">ss_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_customer_sk">ss_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_cdemo_sk">ss_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_hdemo_sk">ss_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_addr_sk">ss_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_store_sk">ss_store_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_promo_sk">ss_promo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ss_ticket_number">ss_ticket_number: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Warehouse" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WarehouseextendsProductwithSerializable"></a>
+      <a id="Warehouse:Warehouse"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$Warehouse.html"><span class="name">Warehouse</span></a><span class="params">(<span name="w_warehouse_sk">w_warehouse_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="w_warehouse_id">w_warehouse_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="w_warehouse_name">w_warehouse_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="w_warehouse_sq_ft">w_warehouse_sq_ft: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.WebSales" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="WebSalesextendsProductwithSerializable"></a>
+      <a id="WebSales:WebSales"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="TPCSchemas$$WebSales.html"><span class="name">WebSales</span></a><span class="params">(<span name="ws_sold_date_sk">ws_sold_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_sold_time_sk">ws_sold_time_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_date_sk">ws_ship_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_item_sk">ws_item_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_bill_customer_sk">ws_bill_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_bill_cdemo_sk">ws_bill_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_bill_hdemo_sk">ws_bill_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_bill_addr_sk">ws_bill_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_customer_sk">ws_ship_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_cdemo_sk">ws_ship_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_hdemo_sk">ws_ship_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_addr_sk">ws_ship_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_web_page_sk">ws_web_page_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_web_site_sk">ws_web_site_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_ship_mode_sk">ws_ship_mode_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_warehouse_sk">ws_warehouse_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_promo_sk">ws_promo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_order_number">ws_order_number: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_quantity">ws_quantity: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_wholesale_cost">ws_wholesale_cost: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="ws_list_price">ws_list_price: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:AnyRef):Boolean"></a>
+      <a id="!=(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:AnyRef):Boolean"></a>
+      <a id="==(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.Any#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas#broadcast" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="broadcast(table:String,scaleFactor:Int):Boolean"></a>
+      <a id="broadcast(String,Int):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">broadcast</span><span class="params">(<span name="table">table: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="scaleFactor">scaleFactor: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.AnyRef">AnyRef</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.AnyRef">AnyRef</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>, <span name="arg1">arg1: <span class="extype" name="scala.Int">Int</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Long">Long</span></span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
+      </span>
+      </h4>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+      <script defer="defer" type="text/javascript" id="jquery-js" src="../../../../../lib/jquery.js"></script><script defer="defer" type="text/javascript" id="jquery-ui-js" src="../../../../../lib/jquery-ui.js"></script><script defer="defer" type="text/javascript" id="tools-tooltip-js" src="../../../../../lib/tools.tooltip.js"></script><script defer="defer" type="text/javascript" id="template-js" src="../../../../../lib/template.js"></script>
+    </body>
+      </html>

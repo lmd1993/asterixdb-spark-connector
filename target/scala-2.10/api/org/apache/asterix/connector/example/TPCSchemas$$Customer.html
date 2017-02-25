@@ -2,9 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html>
         <head>
-          <title>Example - org.apache.asterix.connector.example.Example</title>
-          <meta name="description" content="Example - org.apache.asterix.connector.example.Example" />
-          <meta name="keywords" content="Example org.apache.asterix.connector.example.Example" />
+          <title>Customer - org.apache.asterix.connector.example.TPCSchemas.Customer</title>
+          <meta name="description" content="Customer - org.apache.asterix.connector.example.TPCSchemas.Customer" />
+          <meta name="keywords" content="Customer org.apache.asterix.connector.example.TPCSchemas.Customer" />
           <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
           
       <link href="../../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
@@ -12,7 +12,7 @@
       <script type="text/javascript">
          if(top === self) {
             var url = '../../../../../index.html';
-            var hash = 'org.apache.asterix.connector.example.Example$';
+            var hash = 'org.apache.asterix.connector.example.TPCSchemas$$Customer';
             var anchor = window.location.hash;
             var anchor_opt = '';
             if (anchor.length >= 1)
@@ -22,32 +22,26 @@
    	  </script>
     
         </head>
-        <body class="value">
+        <body class="type">
       <div id="definition">
-        <img src="../../../../../lib/object_big.png" />
-        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.asterix">asterix</a>.<a href="../package.html" class="extype" name="org.apache.asterix.connector">connector</a>.<a href="package.html" class="extype" name="org.apache.asterix.connector.example">example</a></p>
-        <h1>Example</h1>
+        <img src="../../../../../lib/class_big.png" />
+        <p id="owner"><a href="../../../../package.html" class="extype" name="org">org</a>.<a href="../../../package.html" class="extype" name="org.apache">apache</a>.<a href="../../package.html" class="extype" name="org.apache.asterix">asterix</a>.<a href="../package.html" class="extype" name="org.apache.asterix.connector">connector</a>.<a href="package.html" class="extype" name="org.apache.asterix.connector.example">example</a>.<a href="TPCSchemas$.html" class="extype" name="org.apache.asterix.connector.example.TPCSchemas">TPCSchemas</a></p>
+        <h1>Customer</h1>
       </div>
 
       <h4 id="signature" class="signature">
       <span class="modifier_kind">
         <span class="modifier"></span>
-        <span class="kind">object</span>
+        <span class="kind">case class</span>
       </span>
       <span class="symbol">
-        <span class="name">Example</span>
+        <span class="name">Customer</span><span class="params">(<span name="c_customer_sk">c_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_customer_id">c_customer_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_cdemo_sk">c_current_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_hdemo_sk">c_current_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_addr_sk">c_current_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_shipto_date_sk">c_first_shipto_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_sales_date_sk">c_first_sales_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_salutation">c_salutation: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_name">c_first_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_last_name">c_last_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_preferred_cust_flag">c_preferred_cust_flag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_day">c_birth_day: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_month">c_birth_month: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_year">c_birth_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_country">c_birth_country: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_login">c_login: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <span class="extype" name="scala.Product">Product</span> with <span class="extype" name="scala.Serializable">Serializable</span></span>
       </span>
       </h4>
       
-          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>To Run this example, you need to have AsterixDB up and running.</p><p>The frame size is specified at conf/asterix-configuration.xml file under Managix folder.
-Default value of the frame size is 131072.</p><p>If you're running AsterixDB using <span class="extype" name="AsterixHyracksIntegrationUtil">AsterixHyracksIntegrationUtil</span> usually the
-frame size is 32768.</p><p>If you don't know what <span class="extype" name="AsterixHyracksIntegrationUtil">AsterixHyracksIntegrationUtil</span> is, then probably the
-frame size is 131072.
-Note: Project-&gt;right click-&gt;Open Module Settings-&gt;Modules-&gt;Dependencies-&gt;Provide-Compile
-Terminal-&gt; sbt -&gt; compile
-</p></div><div class="toggleContainer block">
+          <div id="comment" class="fullcommenttop"><div class="toggleContainer block">
           <span class="toggle">Linear Supertypes</span>
-          <div class="superTypes hiddenContent"><span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
+          <div class="superTypes hiddenContent"><span class="extype" name="scala.Serializable">Serializable</span>, <span class="extype" name="java.io.Serializable">Serializable</span>, <span class="extype" name="scala.Product">Product</span>, <span class="extype" name="scala.Equals">Equals</span>, <span class="extype" name="scala.AnyRef">AnyRef</span>, <span class="extype" name="scala.Any">Any</span></div>
         </div></div>
         
 
@@ -65,7 +59,7 @@ Terminal-&gt; sbt -&gt; compile
                 <span class="filtertype">Inherited<br />
                 </span>
                 <ol id="linearization">
-                  <li class="in" name="org.apache.asterix.connector.example.Example"><span>Example</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                  <li class="in" name="org.apache.asterix.connector.example.TPCSchemas.Customer"><span>Customer</span></li><li class="in" name="scala.Serializable"><span>Serializable</span></li><li class="in" name="java.io.Serializable"><span>Serializable</span></li><li class="in" name="scala.Product"><span>Product</span></li><li class="in" name="scala.Equals"><span>Equals</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
                 </ol>
               </div><div id="ancestors">
             <span class="filtertype"></span>
@@ -83,7 +77,23 @@ Terminal-&gt; sbt -&gt; compile
 
       <div id="template">
         <div id="allMembers">
-        
+        <div id="constructors" class="members">
+              <h3>Instance Constructors</h3>
+              <ol><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#&lt;init&gt;" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="&lt;init&gt;(c_customer_sk:String,c_customer_id:String,c_current_cdemo_sk:String,c_current_hdemo_sk:String,c_current_addr_sk:String,c_first_shipto_date_sk:String,c_first_sales_date_sk:String,c_salutation:String,c_first_name:String,c_last_name:String,c_preferred_cust_flag:String,c_birth_day:String,c_birth_month:String,c_birth_year:String,c_birth_country:String,c_login:String):org.apache.asterix.connector.example.TPCSchemas.Customer"></a>
+      <a id="&lt;init&gt;:Customer"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">new</span>
+      </span>
+      <span class="symbol">
+        <span class="name">Customer</span><span class="params">(<span name="c_customer_sk">c_customer_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_customer_id">c_customer_id: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_cdemo_sk">c_current_cdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_hdemo_sk">c_current_hdemo_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_current_addr_sk">c_current_addr_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_shipto_date_sk">c_first_shipto_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_sales_date_sk">c_first_sales_date_sk: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_salutation">c_salutation: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_first_name">c_first_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_last_name">c_last_name: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_preferred_cust_flag">c_preferred_cust_flag: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_day">c_birth_day: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_month">c_birth_month: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_year">c_birth_year: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_birth_country">c_birth_country: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="c_login">c_login: <span class="extype" name="scala.Predef.String">String</span></span>)</span>
+      </span>
+      </h4>
+      
+    </li></ol>
+            </div>
 
         
 
@@ -156,19 +166,6 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.apache.asterix.connector.example.Example#aqlQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="aqlQuery:String"></a>
-      <a id="aqlQuery:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">aqlQuery</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="asInstanceOf[T0]:T0"></a>
       <a id="asInstanceOf[T0]:T0"></a>
@@ -182,6 +179,214 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_birth_country" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_birth_country:String"></a>
+      <a id="c_birth_country:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_birth_country</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_birth_day" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_birth_day:String"></a>
+      <a id="c_birth_day:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_birth_day</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_birth_month" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_birth_month:String"></a>
+      <a id="c_birth_month:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_birth_month</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_birth_year" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_birth_year:String"></a>
+      <a id="c_birth_year:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_birth_year</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_current_addr_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_current_addr_sk:String"></a>
+      <a id="c_current_addr_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_current_addr_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_current_cdemo_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_current_cdemo_sk:String"></a>
+      <a id="c_current_cdemo_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_current_cdemo_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_current_hdemo_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_current_hdemo_sk:String"></a>
+      <a id="c_current_hdemo_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_current_hdemo_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_customer_id" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_customer_id:String"></a>
+      <a id="c_customer_id:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_customer_id</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_customer_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_customer_sk:String"></a>
+      <a id="c_customer_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_customer_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_first_name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_first_name:String"></a>
+      <a id="c_first_name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_first_name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_first_sales_date_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_first_sales_date_sk:String"></a>
+      <a id="c_first_sales_date_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_first_sales_date_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_first_shipto_date_sk" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_first_shipto_date_sk:String"></a>
+      <a id="c_first_shipto_date_sk:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_first_shipto_date_sk</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_last_name" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_last_name:String"></a>
+      <a id="c_last_name:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_last_name</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_login" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_login:String"></a>
+      <a id="c_login:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_login</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_preferred_cust_flag" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_preferred_cust_flag:String"></a>
+      <a id="c_preferred_cust_flag:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_preferred_cust_flag</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.asterix.connector.example.TPCSchemas.Customer#c_salutation" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="c_salutation:String"></a>
+      <a id="c_salutation:String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">c_salutation</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
+      </span>
+      </h4>
+      
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
@@ -214,19 +419,6 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="equals(x$1:Any):Boolean"></a>
-      <a id="equals(Any):Boolean"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <span class="extype" name="scala.Any">Any</span></span>)</span><span class="result">: <span class="extype" name="scala.Boolean">Boolean</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="finalize():Unit"></a>
       <a id="finalize():Unit"></a>
@@ -259,32 +451,6 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="hashCode():Int"></a>
-      <a id="hashCode():Int"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Int">Int</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
-    </li><li name="org.apache.asterix.connector.example.Example#init" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="init():Unit"></a>
-      <a id="init():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">init</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="isInstanceOf[T0]:Boolean"></a>
       <a id="isInstanceOf[T0]:Boolean"></a>
@@ -298,20 +464,6 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
-    </li><li name="org.apache.asterix.connector.example.Example#main" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="main(args:Array[String]):Unit"></a>
-      <a id="main(Array[String]):Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">main</span><span class="params">(<span name="args">args: <span class="extype" name="scala.Array">Array</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">Run the example.</p><div class="fullcomment"><div class="comment cmt"><p>Run the example.</p></div><dl class="paramcmts block"><dt class="param">args</dt><dd class="cmt"><p>
-</p></dd></dl></div>
     </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="ne(x$1:AnyRef):Boolean"></a>
       <a id="ne(AnyRef):Boolean"></a>
@@ -351,65 +503,6 @@ Terminal-&gt; sbt -&gt; compile
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="org.apache.asterix.connector.example.Example#runAsterixRDD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="runAsterixRDD():Unit"></a>
-      <a id="runAsterixRDD():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">runAsterixRDD</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">This example shows how to get AsterixRDD from an AQL query.</p><div class="fullcomment"><div class="comment cmt"><p>This example shows how to get AsterixRDD from an AQL query.
-AsterixRDD usually is not the most useful form as it returns the result
-as RDD[String]. Until now, AsterixDB does not provide a Java driver. Once
-that we have it. This form can be useful and less memory intensive.
-</p></div></div>
-    </li><li name="org.apache.asterix.connector.example.Example#runAsterixWithDataFrame" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="runAsterixWithDataFrame():Unit"></a>
-      <a id="runAsterixWithDataFrame():Unit"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">runAsterixWithDataFrame</span><span class="params">()</span><span class="result">: <span class="extype" name="scala.Unit">Unit</span></span>
-      </span>
-      </h4>
-      <p class="shortcomment cmt">This is the best way to interact with AsterixDB using Spark.</p><div class="fullcomment"><div class="comment cmt"><p>This is the best way to interact with AsterixDB using Spark.
-the query (SQL++ or AQL) result is returned as a DataFrame which
-can then be used with many of Spark libraries.
-</p></div></div>
-    </li><li name="org.apache.asterix.connector.example.Example#sc" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sc:org.apache.spark.SparkContext"></a>
-      <a id="sc:SparkContext"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">var</span>
-      </span>
-      <span class="symbol">
-        <span class="name">sc</span><span class="result">: <span class="extype" name="org.apache.spark.SparkContext">SparkContext</span></span>
-      </span>
-      </h4>
-      
-    </li><li name="org.apache.asterix.connector.example.Example#sqlppQuery" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
-      <a id="sqlppQuery:String"></a>
-      <a id="sqlppQuery:String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">val</span>
-      </span>
-      <span class="symbol">
-        <span class="name">sqlppQuery</span><span class="result">: <span class="extype" name="scala.Predef.String">String</span></span>
-      </span>
-      </h4>
-      
     </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
       <a id="synchronized[T0](⇒T0):T0"></a>
@@ -423,19 +516,6 @@ can then be used with many of Spark libraries.
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
-    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="toString():String"></a>
-      <a id="toString():String"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">def</span>
-      </span>
-      <span class="symbol">
-        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
     </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="wait():Unit"></a>
       <a id="wait():Unit"></a>
@@ -502,7 +582,15 @@ can then be used with many of Spark libraries.
         </div>
 
         <div id="inheritedMembers">
-        <div class="parent" name="scala.AnyRef">
+        <div class="parent" name="scala.Serializable">
+              <h3>Inherited from <span class="extype" name="scala.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="java.io.Serializable">
+              <h3>Inherited from <span class="extype" name="java.io.Serializable">Serializable</span></h3>
+            </div><div class="parent" name="scala.Product">
+              <h3>Inherited from <span class="extype" name="scala.Product">Product</span></h3>
+            </div><div class="parent" name="scala.Equals">
+              <h3>Inherited from <span class="extype" name="scala.Equals">Equals</span></h3>
+            </div><div class="parent" name="scala.AnyRef">
               <h3>Inherited from <span class="extype" name="scala.AnyRef">AnyRef</span></h3>
             </div><div class="parent" name="scala.Any">
               <h3>Inherited from <span class="extype" name="scala.Any">Any</span></h3>

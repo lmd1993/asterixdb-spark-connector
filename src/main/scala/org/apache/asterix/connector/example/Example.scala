@@ -18,6 +18,7 @@
  */
 package org.apache.asterix.connector.example
 
+
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.asterix._
@@ -34,7 +35,8 @@ import org.apache.asterix.connector._
  *
  * If you don't know what [[AsterixHyracksIntegrationUtil]] is, then probably the
  * frame size is 131072.
- *
+ * Note: Project->right click->Open Module Settings->Modules->Dependencies->Provide-Compile
+ * Terminal-> sbt -> compile
  */
 object Example {
   var sc: SparkContext = null
@@ -89,6 +91,22 @@ object Example {
 
       println("AQL result")
       rddAql.collect().foreach(println)
+    //show all dataset and dataverse
+      val sqlContext= new SQLContext(sc)
+      val dataAll=sqlContext.showAll()
+      dataAll.show()
+    //choose one dataset in a dataverse that you want to use
+      val Dataverse="tpcds3";
+      val Dataset="inventory"
+      val schema=sqlContext.showSchema(Dataverse,Dataset);
+      println(schema)
+    //use one dataset in a dataverse. Return a Dataframe
+      val datasetR=sqlContext.useDataset(Dataverse,Dataset);
+      datasetR.show()
+
+
+
+
   }
 
   /**
@@ -105,21 +123,25 @@ object Example {
      * if that throws an exception, probably you AsterixDB doesn't have the schema inferencer.
      * Therefore, let infer = false and Spark will do the job (with the cost of additional scan).
      */
-    val dfSqlpp = sqlContext.sqlpp(sqlppQuery, infer = true)
+    val dfSqlpp = sqlContext.sqlpp(sqlppQuery)
 
     println("SQL++ DataFrame result")
-    dfSqlpp.printSchema()
-    dfSqlpp.show()
+    dfSqlpp.filter(dfSqlpp("age")>30).show()
+
+
   }
 
   /**
    * Run the example.
    * @param args
    */
-  def main (args: Array[String]): Unit = {
+  def main (args: Array[String]) {
     init()
     runAsterixRDD()
+
     runAsterixWithDataFrame()
     sc.stop()
+//    val conf = new SparkConf().setAppName("sdfsf").setMaster("local[2]")
+//    val sc = new SparkContext(conf)
   }
 }

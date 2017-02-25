@@ -81,8 +81,21 @@
 
         <div id="types" class="types members">
               <h3>Type Members</h3>
-              <ol><li name="org.apache.spark.sql.Strategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="Strategy=org.apache.spark.sql.catalyst.planning.GenericStrategy[org.apache.spark.sql.execution.SparkPlan]"></a>
+              <ol><li name="org.apache.spark.sql.DataFrame" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="DataFrame=org.apache.spark.sql.Dataset[org.apache.spark.sql.Row]"></a>
+      <a id="DataFrame:DataFrame"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">type</span>
+      </span>
+      <span class="symbol">
+        <span class="name">DataFrame</span><span class="result"> = <span class="extype" name="org.apache.spark.sql.Dataset">Dataset</span>[<span class="extype" name="org.apache.spark.sql.Row">Row</span>]</span>
+      </span>
+      </h4>
+      
+    </li><li name="org.apache.spark.sql.Strategy" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="Strategy=org.apache.spark.sql.execution.SparkStrategy"></a>
       <a id="Strategy:Strategy"></a>
       <h4 class="signature">
       <span class="modifier_kind">
@@ -90,29 +103,13 @@
         <span class="kind">type</span>
       </span>
       <span class="symbol">
-        <span class="name">Strategy</span><span class="result"> = <span class="extype" name="org.apache.spark.sql.catalyst.planning.GenericStrategy">GenericStrategy</span>[<span class="extype" name="org.apache.spark.sql.execution.SparkPlan">SparkPlan</span>]</span>
+        <span class="name">Strategy</span><span class="result"> = <span class="extype" name="org.apache.spark.sql.execution.SparkStrategy">SparkStrategy</span></span>
       </span>
       </h4>
       <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
                 <span class="name">@DeveloperApi</span><span class="args">()</span>
               
         </dd></dl></div>
-    </li><li name="org.apache.spark.sql.SchemaRDD" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
-      <a id="SchemaRDD=org.apache.spark.sql.DataFrame"></a>
-      <a id="SchemaRDD:SchemaRDD"></a>
-      <h4 class="signature">
-      <span class="modifier_kind">
-        <span class="modifier"></span>
-        <span class="kind">type</span>
-      </span>
-      <span class="symbol">
-        <span class="name deprecated" title="Deprecated: (Since version 1.3.0) use DataFrame">SchemaRDD</span><span class="result"> = <span class="extype" name="org.apache.spark.sql.DataFrame">DataFrame</span></span>
-      </span>
-      </h4>
-      <div class="fullcomment"><dl class="attributes block"> <dt>Annotations</dt><dd>
-                <span class="name">@deprecated</span>
-              
-        </dd><dt>Deprecated</dt><dd class="cmt"><p><i>(Since version 1.3.0)</i> use DataFrame</p></dd></dl></div>
     </li></ol>
             </div>
 
