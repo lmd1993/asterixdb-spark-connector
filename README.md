@@ -4,6 +4,7 @@ This an Apache Spark connector which allows it to consume data from Apache Astre
 
 ###Requirements
 ---
+- Spark Version 2.0.2
 - Java version 8
 - SBT version >= 0.3.17
 - Scala 2.10 (Never tested on 2.11)
