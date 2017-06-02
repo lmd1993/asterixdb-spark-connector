@@ -19,9 +19,14 @@
 package org.apache.spark.sql.asterix
 
 import org.apache.asterix.connector.QueryType.QueryType
-import org.apache.spark.sql.{DataFrame, SQLContext}
+import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD
+import org.apache.spark.sql.types.{StringType, DataType, LongType}
+import org.apache.spark.sql.{Row, DataFrame, SQLContext}
 import org.apache.asterix.connector._
-
+import java.io._
+import scala.io.Source
+import java.net._
 /**
  * This class extends SQLContext (implicitly) to query AsterixDB
  * using both aql() and sqlpp() methods.
@@ -100,6 +105,144 @@ class SQLContextFunctions(@transient sqlContext:SQLContext)
     val aqlQuery=" use dataverse "+ Dataverse+"; for $i in dataset "+Dataset+" limit 2 return $i;"
     executeQuery(aqlQuery, QueryType.AQL, infer, printCaseClasses)
   }
+  def createFeed (dataverse: String, dataset: String, typeName : String = "TestDataType", formatType :String = "adm" ): String= {
+    var aqlQuery = " use dataverse " +dataverse +"; "
+    aqlQuery = aqlQuery + "drop feed tmpFeed if exists; \n create feed tmpFeed  using socket_adapter ( (\"sockets\"=\"127.0.0.1:10001\"),\n       (\"address-type\"=\"IP\"),\n       (\"type-name\"=\"" +typeName +"\"),     (\"format\"=\""+ formatType+"\"));"
+    aqlQuery = aqlQuery + "  connect feed tmpFeed to dataset "+dataset+ ";"
+    aqlQuery
+  }
+  @transient
+  def feedFromFileToLocal( filePath: String): Unit ={
+    var ip = "127.0.0.1"
+    var port1 = 10001
+    val ia = InetAddress.getLocalHost()
+    val socket = new Socket(ia, 10001)
+    val writer = new OutputStreamWriter(socket.getOutputStream());
+    for (line <- Source.fromFile(filePath).getLines()) {
+      writer.write(line);
+      writer.flush();
+      writer.close();
+    }
+    socket.close();
+  }
+  def convertDfToADM (row:Row, stringL:List[Number], stringC:List[String]) :String ={
+    var st = "{"
+    var ind = 0
+    for {ind <- 0 until row.length}
+      if (stringL contains (ind)){
+        st = st+"\""+stringC(ind) +"\" :"
+        st = st+"\""+row(ind).toString+"\" ,"
+      }else{
+        st= st+"\""+stringC(ind) +"\" :"
+          st = st+row(ind).toString+","
+      }
+    st = st.dropRight(1)
+    st = st + "}"
+    println (st)
+    st
+
+  }
+
+  def feedFromDfToFile( df: DataFrame) : Unit = {
+    var i = 0
+    var stringL = List[Number]()
+    var stringC = List[String]()
+    df.schema.fields.foreach(field => field.dataType match {
+      case StringType => {
+        stringL = i :: stringL
+        i = i + 1
+      }
+      case _ => i = i + 1
+    })
+    df.schema.fields.
+      foreach(field => stringC = stringC :+ field.name)
+
+
+    df.foreach(f
+    => {
+      val fw = new FileWriter("test.adm", true)
+      try {
+        fw.write( convertDfToADM(f, stringL, stringC))
+      }
+      finally fw.close()
+      /*
+
+      var ip = "127.0.0.1"
+      var port1 = 10001
+      val ia = InetAddress.getLocalHost()
+      val socket = new Socket(ia, 10001)
+      val writer = new OutputStreamWriter(socket.getOutputStream());
+      writer.write(convertDfToADM(f, stringL, stringC))
+      writer.flush()
+      writer.close()
+      socket.close();*/
+
+    })
+  }
+  def feedFromDfToLocal( df: DataFrame) : Unit ={
+    var i = 0
+    var stringL= List[Number]()
+    var stringC = List[String]()
+    df.schema.fields.foreach(field => field.dataType match {
+      case StringType => {
+        stringL = i :: stringL
+        i = i + 1
+      }
+      case _ => i = i + 1
+    })
+    df.schema.fields.
+      foreach(field => stringC = stringC :+ field.name)
+
+
+    df.foreach(f
+    =>{
+      var ip = "127.0.0.1"
+      var port1 = 10001
+      val ia = InetAddress.getLocalHost()
+      val socket = new Socket(ia, 10001)
+      val writer = new OutputStreamWriter(socket.getOutputStream());
+      writer.write(convertDfToADM(f, stringL, stringC))
+      writer.flush()
+      writer.close()
+      socket.close();
+
+    })
+    /*
+    for (line <- Source.fromFile(filePath).getLines()) {
+      writer.write(line);
+      writer.flush();
+      writer.close();
+    }
+    */
+
+  }
+
+
+  def typeMap (inputString : DataType): String ={
+    val s = inputString match {
+      case LongType => "bigint,"
+      case _ => "bigint,"
+    }
+    s
+  }
+  def partaql (inputDataframe : DataFrame) : String={
+    var s = ""
+    inputDataframe.schema.fields.foreach(field => s= s+ field.name+": "+typeMap(field.dataType))
+    s
+  }
+  /*
+  *The method is to return the dataset's schema
+  */
+  @transient
+  def registerDataFrame(inputDataframe:DataFrame, Dataverse:String, Dataset: String, PrimaryKey: String):String ={
+
+    val aqlQuery=" use dataverse "+ Dataverse+";  create type tmp as closed {" + partaql(inputDataframe).dropRight(1) +
+    "} create dataset " +Dataset + "(tmp) primary key " + PrimaryKey +";"
+
+    aqlQuery
+  }
+
+
   /**
    * The method takes an AQL query and returns a DataFrame.
    * @param aqlQuery AQL query.

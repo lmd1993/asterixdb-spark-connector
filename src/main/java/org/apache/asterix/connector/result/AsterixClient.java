@@ -30,7 +30,6 @@ import org.apache.hyracks.dataflow.common.comm.io.ResultFrameTupleAccessor;
 import org.apache.hyracks.dataflow.common.comm.util.ByteBufferInputStream;
 import org.apache.log4j.Logger;
 
-
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.LinkedList;
@@ -125,7 +124,6 @@ public class AsterixClient {
         }
 
     }
-
     /**
      * Get one tuple from the result buffer.
      *

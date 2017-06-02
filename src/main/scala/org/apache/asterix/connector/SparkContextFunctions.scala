@@ -23,6 +23,9 @@ import org.apache.asterix.connector.rdd.AsterixRDD
 import org.apache.asterix.connector.result.AsterixClient
 import org.apache.hyracks.api.dataset.DatasetDirectoryRecord.Status
 import org.apache.spark.SparkContext
+import org.apache.spark.sql.DataFrame
+import org.apache.spark.sql.asterix.SQLContextFunctions
+import org.apache.spark.sql.types.{StringType, LongType, DataType}
 
 import scala.util.{Failure, Success, Try}
 
@@ -81,6 +84,47 @@ class SparkContextFunctions(@transient sc: SparkContext) extends Serializable wi
   }
   def sqlpp(sqlpp:String): AsterixRDD = {
     executeQuery(sqlpp, QueryType.SQLPP)
+  }
+  // without return value: for the register table, create feed and etc.
+  def executeJustQuery(query: String, queryType: QueryType = QueryType.AQL): Any = {
+    val handle = queryType match {
+      case QueryType.AQL => api.executeJustAQL(query)
+      case QueryType.SQLPP => api.executeSQLPP(query)
+    }
+  }
+  def startFeed(dataverse: String, dataset: String, typeName : String = "tmpType", formatType :String = "adm"): Any = {
+    var aqlQuery = " use dataverse " +dataverse +"; "
+    aqlQuery = aqlQuery + "drop feed tmpFeed if exists; \n create feed tmpFeed  using socket_adapter ( (\"sockets\"=\"127.0.0.1:10001\"),\n       (\"address-type\"=\"IP\"),\n       (\"type-name\"=\"" +typeName +"\"),     (\"format\"=\""+ formatType+"\"));"
+    aqlQuery = aqlQuery + "  connect feed tmpFeed to dataset "+dataset+ ";"
+    print(aqlQuery)
+    val handle = api.executeJustAQL(aqlQuery)
+  }
+
+
+  def typeMap (inputString : DataType): String ={
+    val s = inputString match {
+      case LongType => "int32,"
+      case StringType => "string,"
+      case _ => "bigint,"
+    }
+    s
+  }
+  def partaql (inputDataframe : DataFrame) : String={
+    var s = ""
+    inputDataframe.schema.fields.foreach(field => s= s+ field.name+": "+typeMap(field.dataType))
+    s
+  }
+  def establishTable(inputDataframe:DataFrame, Dataverse:String, Dataset: String, PrimaryKey: String): Any = {
+    val aqlQuery=" create dataverse "+ Dataverse+  " if not exists; use dataverse "+ Dataverse+";  create type tmpType as open {" + partaql(inputDataframe).dropRight(1) +
+      "}; create dataset " +Dataset + "(tmpType) primary key " + PrimaryKey +";"
+
+    println(aqlQuery)
+    val handle = api.executeJustAQL(aqlQuery)
+  }
+
+
+  def stopFeed(dataverse: String, dataset: String):Any ={
+    api.executeJustAQL("use dataverse " + dataverse +"; disconnect tmpFeed from dataset "+ dataset +";")
   }
 
   private def executeQuery(query: String, queryType: QueryType): AsterixRDD = {

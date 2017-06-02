@@ -60,6 +60,10 @@ class AsterixHttpAPI(configuration: Configuration) extends  Logging {
     val jsonString = executeQuery(query, async = true, QueryType.AQL)
     getHandle(jsonString)
   }
+  def executeJustAQL(query: String): Any =
+  {
+    val jsonString = executeQuery(query, async = true, QueryType.AQL)
+  }
 
   def executeSQLPP(query: String): Handle =
   {

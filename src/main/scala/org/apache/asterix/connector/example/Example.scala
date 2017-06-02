@@ -23,6 +23,7 @@ import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkContext, SparkConf}
 import org.apache.spark.sql.asterix._
 import org.apache.asterix.connector._
+import org.apache.spark.sql.types._
 
 /**
  * To Run this example, you need to have AsterixDB up and running.
@@ -42,22 +43,26 @@ object Example {
   var sc: SparkContext = null
 
   val aqlQuery = """
-              |let $exampleSet := [
-              | {"name" : "Ann", "age" : 20, "salary" : 100000},
-              | {"name" : "Bob", "age" : 30, "salary" : 200000},
-              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependents" : [1, 2, 3]}
-              |]
-              |for $x in $exampleSet
-              |return $x
+              |
+              |    use dataverse feed4;
+              |    create type TwitterUser as closed {
+              |        screen_name: string,
+              |        lang: string,
+              |        friends_count: int32,
+              |        statuses_count: int32
+              |    };
+              | create type Tweet as open {
+              |        id: int64,
+              |        user: TwitterUser
+              |    }
+              |
+              |    create dataset Tweets (Tweet)
+              |    primary key id;
               |""".stripMargin
 
   val sqlppQuery ="""
-              | SELECT element exampleSet
-              | FROM [
-              | {"name" : "Ann", "age" : 20, "salary" : 100000},
-              | {"name" : "Bob", "age" : 30, "salary" : 200000},
-              | {"name" : "Cat", "age" : 40, "salary" : 300000, "dependents" : [1, 2, 3]}
-              | ] as exampleSet;
+                    |use dataverse tpcds3;
+                    |for $i in dataset inventory return $i;
               | """.stripMargin
 
 
@@ -87,10 +92,10 @@ object Example {
     /* Get AstreixRDD from SparkContext using AQL query.
      * You can use sqlpp() to get the result from running SQL++ query.
      */
-      val rddAql = sc.aql(aqlQuery)
+      val rddAql = sc.executeJustQuery(aqlQuery, QueryType.AQL) // test for no return query
 
       println("AQL result")
-      rddAql.collect().foreach(println)
+      // rddAql.collect().foreach(println)
     //show all dataset and dataverse
       val sqlContext= new SQLContext(sc)
       val dataAll=sqlContext.showAll()
@@ -103,8 +108,33 @@ object Example {
     //use one dataset in a dataverse. Return a Dataframe
       val datasetR=sqlContext.useDataset(Dataverse,Dataset);
       datasetR.show()
+     // by the schema of dataframe, we can build table for aql
+      val schemaSpark = datasetR.printSchema()
+    // print out the schema of a dataframe's attribute one by one
+    /*
+      (inv_date_sk,LongType,true)
+      (inv_item_sk,LongType,true)
+      (inv_quantity_on_hand,LongType,true)
+      (inv_warehouse_sk,LongType,true)
+     */
+    val aqlquery = ""
+    datasetR.schema.fields.foreach(field => print (field.name, field.dataType.typeName))
+    // register (dataframe, dataverse, dataset, key)
+    println (sqlContext.createFeed("feeds", "TestDataset"))
+    sc.startFeed("feeds", "TestDataset")
+    sqlContext.feedFromFileToLocal(  "/Users/MingdaLi/Desktop/ucla_4/spark-asterixDB/asterixdb-spark-connector/chu.adm")
+    sc.stopFeed("feeds", "TestDataset")
+    // feed data from file to dataverse, dataset
 
+    sc.establishTable(datasetR,"tmpD","tmpT","inv_date_sk, inv_item_sk ,inv_warehouse_sk")
+    sqlContext.feedFromDfToFile(datasetR) // build a test.adm file
+    //sc.stopFeed("tmpD", "tmpT")
+    //sc.startFeed("tmpD", "tmpT")
+    // sqlContext.feedFromDfToLocal( datasetR)
+    // sqlContext.feedFromDfToFile( datasetR)
+    //sqlContext.feedFromFileToLocal(  "/Users/MingdaLi/Desktop/ucla_4/spark-asterixDB/asterixdb-spark-connector/test.txt")
 
+    //sc.stopFeed("tmpD", "tmpT")
 
 
   }
@@ -123,10 +153,50 @@ object Example {
      * if that throws an exception, probably you AsterixDB doesn't have the schema inferencer.
      * Therefore, let infer = false and Spark will do the job (with the cost of additional scan).
      */
-    val dfSqlpp = sqlContext.sqlpp(sqlppQuery)
+    val start = System.currentTimeMillis
+
+    val dfSqlpp = sqlContext.aql(sqlppQuery)
 
     println("SQL++ DataFrame result")
-    dfSqlpp.filter(dfSqlpp("age")>30).show()
+    dfSqlpp.filter(dfSqlpp("inv_item_sk")===38).show()
+    val totalTime = System.currentTimeMillis - start
+    println("INV time: %1d ms".format(totalTime))
+
+
+    var start2 = System.currentTimeMillis
+
+    val aQuery ="""
+                  |use dataverse feeds;
+                  |for $i in dataset Tweets return $i;
+                  | """.stripMargin
+    var alpp = sqlContext.aql(aQuery)
+    alpp.filter(alpp("id")==="861402323485982720").show()
+    var totalTime2 = System.currentTimeMillis - start2
+
+    println("TWEET time: %1d ms".format(totalTime2))
+
+     start2 = System.currentTimeMillis
+
+    var bQuery ="""
+                  |use dataverse tpcds3;
+                  |for $i in dataset catalog_sales return $i;
+                  | """.stripMargin
+    alpp = sqlContext.aql(bQuery)
+    alpp.filter(alpp("cs_sold_date_sk")==="2450816").show()
+    var totalTime3 = System.currentTimeMillis - start2
+
+    println("CS time: %1d ms".format(totalTime3))
+
+    bQuery ="""
+              |use dataverse tpcds3;
+              |for $i in dataset catalog_returns return $i;
+              | """.stripMargin
+    alpp = sqlContext.aql(bQuery)
+    alpp.filter(alpp("cr_returned_date_sk")<"2452057").count()
+    var totalTime4 = System.currentTimeMillis - start2
+
+    println("CR time: %1d ms".format(totalTime4))
+
 
 
   }
@@ -138,8 +208,9 @@ object Example {
   def main (args: Array[String]) {
     init()
     runAsterixRDD()
+    // runAsterixWithDataFrame()
 
-    runAsterixWithDataFrame()
+
     sc.stop()
 //    val conf = new SparkConf().setAppName("sdfsf").setMaster("local[2]")
 //    val sc = new SparkContext(conf)

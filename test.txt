@@ -1,0 +1,2 @@
+{"inv_date_sk":2450815,"inv_item_sk":1,"inv_quantity_on_hand":211,"inv_warehouse_sk":1},
+{"inv_date_sk":2450815,"inv_item_sk":1,"inv_quantity_on_hand":824,"inv_warehouse_sk":2}

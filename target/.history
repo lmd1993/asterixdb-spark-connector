@@ -53,3 +53,10 @@ assembly
 package
 assembly
 publish
+assembly
+clean package
+package
+clean
+package
+exit
+compile
