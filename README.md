@@ -10,7 +10,7 @@ Requirements
 ---
 - Java version 8
 - SBT version >= 0.3.17
-- Scala 2.10 (Never tested on 2.11)
+- Scala 2.11
 - Apache AsterixDB version >= 0.9.2 (up and running)
 
 Build
