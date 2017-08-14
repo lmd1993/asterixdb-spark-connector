@@ -1,0 +1,49 @@
+assembly
+exit
+val x = 1
+exit
+val x = 2
+help
+exit
+run
+help javaOptions
+fork := true
+javaOptions fork := true
+javaOptions
+fork := true
+run
+javaOptions help
+help javaOptions
+javaOptions fork in run := true
+javaOptions in fork in run := true
+javaOptions in run := true
+javaOptions in run += true
+javaOptions 
+javaOptions in run
+javaOptions : fork in run:=true
+javaOptions run
+javaOptions
+exit
+set javaOptions fork in run := true
+set javaOptions fork in run := "true"
+set javaOptions fork in run := true
+set javaOptions += "fork in run := true"
+run
+help
+projects
+tasks
+run
+?
+:help
+help
+project
+projects
+org.apache.asterix.connector.example
+show
+run
+exit
+run
+val byte = 0
+package
+assembly
+publish

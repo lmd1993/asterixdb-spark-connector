@@ -1,0 +1,315 @@
+{
+  "paragraphs": [
+    {
+      "text": "%md\n## AsterixDB Spark Connector Examples\n---\n####Add the connector artifact to Apache Zeppeline\nTo import the connector, you need to go to Spark interperter and add the connector artifact:\n- Either the ``assembly`` JAR artifact path.\n- Or by adding the artifact from local-repo (e.g ``org.apache.asterix:asterixdb-spark-connector_2.10:1.6.1``)\n\n####For more information:\n- [AsterixDB-Spark Connector](https://github.com/Nullification/astreixdb-spark-connector)\n- [Apache Zeppeline](https://zeppelin.apache.org)",
+      "dateUpdated": "Jul 17, 2016 3:42:21 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown",
+        "editorHide": false
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467729216594_-980381344",
+      "id": "20160705-073336_1006783527",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch2\u003eAsterixDB Spark Connector Examples\u003c/h2\u003e\n\u003chr /\u003e\n\u003ch4\u003eAdd the connector artifact to Apache Zeppeline\u003c/h4\u003e\n\u003cp\u003eTo import the connector, you need to go to Spark interperter and add the connector artifact:\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003eEither the \u003ccode\u003eassembly\u003c/code\u003e JAR artifact path.\u003c/li\u003e\n\u003cli\u003eOr by adding the artifact from local-repo (e.g \u003ccode\u003eorg.apache.asterix:asterixdb-spark-connector_2.10:1.6.1\u003c/code\u003e)\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch4\u003eFor more information:\u003c/h4\u003e\n\u003cul\u003e\n\u003cli\u003e\u003ca href\u003d\"https://github.com/Nullification/astreixdb-spark-connector\"\u003eAsterixDB-Spark Connector\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e\u003ca href\u003d\"https://zeppelin.apache.org\"\u003eApache Zeppeline\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n"
+      },
+      "dateCreated": "Jul 5, 2016 7:33:36 AM",
+      "dateStarted": "Jul 17, 2016 3:42:21 PM",
+      "dateFinished": "Jul 17, 2016 3:42:21 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n/**\n* This is the best way to interact with AsterixDB using Spark.\n* the query (SQL++ or AQL) result is returned as a DataFrame which\n* then can be used with many of Spark libraries.\n*/\n\n// Import connector\nimport org.apache.asterix.connector._\nimport org.apache.spark.sql.asterix._\n\n//AQL query\nval aqlQuery \u003d \"\"\"\n            let $exampleSet :\u003d [\n             {\"name\" : \"Ann\", \"age\" : 20, \"salary\" : 100000},\n             {\"name\" : \"Bob\", \"age\" : 30, \"salary\" : 200000},\n             {\"name\" : \"Cat\", \"age\" : 40, \"salary\" : 300000, \"dependents\" : [1, 2, 3]},\n             {\"name\" : \"Cat\", \"age\" : 50, \"salary\" : 400000}\n            ]\n            for $x in $exampleSet\n            return $x\n         \"\"\"\n\n//Return Dataframe, infer the schema and print case classes\nval df \u003d sqlContext.aql(aqlQuery,infer \u003d true, printCaseClasses \u003d true)",
+      "dateUpdated": "Jul 17, 2016 3:25:11 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467727152927_1826436335",
+      "id": "20160705-065912_1225186510",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import org.apache.asterix.connector._\nimport org.apache.spark.sql.asterix._\naqlQuery: String \u003d \n\"\n            let $exampleSet :\u003d [\n             {\"name\" : \"Ann\", \"age\" : 20, \"salary\" : 100000},\n             {\"name\" : \"Bob\", \"age\" : 30, \"salary\" : 200000},\n             {\"name\" : \"Cat\", \"age\" : 40, \"salary\" : 300000, \"dependents\" : [1, 2, 3]},\n             {\"name\" : \"Cat\", \"age\" : 50, \"salary\" : 400000}\n            ]\n            for $x in $exampleSet\n            return $x\n         \"\n//------------- BEGIN -------------\n/*\nDatasetType1{\n    name:string,\n    age:int64,\n    salary:int64,\n    dependents:[int64]\n}\n\n*/\ncase class DatasetType1(age: Long, dependents: Array[Long], name: String, salary: Long)\n\n//-------------  END  -------------\ndf: org.apache.spark.sql.DataFrame \u003d [age: bigint, dependents: array\u003cbigint\u003e, name: string, salary: bigint]\n"
+      },
+      "dateCreated": "Jul 5, 2016 6:59:12 AM",
+      "dateStarted": "Jul 17, 2016 3:25:11 AM",
+      "dateFinished": "Jul 17, 2016 3:25:12 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\ndf.registerTempTable(\"person\")",
+      "dateUpdated": "Jul 17, 2016 3:25:15 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467729836222_1135045253",
+      "id": "20160705-074356_283783361",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Jul 5, 2016 7:43:56 AM",
+      "dateStarted": "Jul 17, 2016 3:25:15 AM",
+      "dateFinished": "Jul 17, 2016 3:25:15 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark.sql\nselect * from person",
+      "dateUpdated": "Jul 17, 2016 3:25:16 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "dependent-ids",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "age",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "dependent-ids",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql",
+        "helium": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467733604613_382049496",
+      "id": "20160705-084644_61865156",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "age\tdependents\tname\tsalary\n20\tnull\tAnn\t100000\n40\tWrappedArray(1, 2, 3)\tCat\t300000\n30\tnull\tBob\t200000\n50\tnull\tCat\t400000\n"
+      },
+      "dateCreated": "Jul 5, 2016 8:46:44 AM",
+      "dateStarted": "Jul 17, 2016 3:25:16 AM",
+      "dateFinished": "Jul 17, 2016 3:25:16 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n//Provided by the connector above.\n//------------- BEGIN -------------\n/*\nDatasetType1{\n    name:string,\n    age:int64,\n    salary:int64,\n    dependents:[int64]\n}\n*/\ncase class DatasetType1(age: Long, dependents: Array[Long], name: String, salary: Long)\n//-------------  END  -------------",
+      "dateUpdated": "Jul 17, 2016 3:25:21 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467733615197_-12672227",
+      "id": "20160705-084655_927089704",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "defined class DatasetType1\n"
+      },
+      "dateCreated": "Jul 5, 2016 8:46:55 AM",
+      "dateStarted": "Jul 17, 2016 3:25:21 AM",
+      "dateFinished": "Jul 17, 2016 3:25:21 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark\n//Get Spark Dataset\nimport sqlContext.implicits._\nval ds \u003d df.as[DatasetType1]",
+      "dateUpdated": "Jul 17, 2016 3:25:23 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467733818749_1296875635",
+      "id": "20160705-085018_204566108",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "import sqlContext.implicits._\nds: org.apache.spark.sql.Dataset[DatasetType1] \u003d [age: bigint, dependents: array\u003cbigint\u003e, name: string, salary: bigint]\n"
+      },
+      "dateCreated": "Jul 5, 2016 8:50:18 AM",
+      "dateStarted": "Jul 17, 2016 3:25:23 AM",
+      "dateFinished": "Jul 17, 2016 3:25:24 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark \n//Do word-count on field name\nds.map(person \u003d\u003e (person.name, 1))\n    .groupBy(_._1) // Group by name\n    .mapGroups{ (k, v) \u003d\u003e //map each key-value (k, v) in the group\n        (k, v.size) //v is an iterator. So we need only the size of the iterator.\n    }.show",
+      "dateUpdated": "Jul 17, 2016 3:28:24 AM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1467733884004_640786815",
+      "id": "20160705-085124_1124145191",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "+---+---+\n| _1| _2|\n+---+---+\n|Cat|  2|\n|Bob|  1|\n|Ann|  1|\n+---+---+\n\n"
+      },
+      "dateCreated": "Jul 5, 2016 8:51:24 AM",
+      "dateStarted": "Jul 17, 2016 3:28:24 AM",
+      "dateFinished": "Jul 17, 2016 3:28:24 AM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%spark ",
+      "dateUpdated": "Jul 13, 2016 1:52:17 AM",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "paragraph_1468407137143_-323128237",
+      "id": "20160713-135217_159170229",
+      "dateCreated": "Jul 13, 2016 1:52:17 AM",
+      "status": "READY",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "AsterixDB Spark Connector",
+  "id": "2BP8CZUUA",
+  "lastReplName": {
+    "value": "md"
+  },
+  "angularObjects": {
+    "2BSK6X567:shared_process": [],
+    "2BQABSKJP:shared_process": [],
+    "2BQGMVME8:shared_process": [],
+    "2BPNG41YM:shared_process": [],
+    "2BQ6VHMGR:shared_process": [],
+    "2BNY6HEFE:shared_process": [],
+    "2BRZX7GDU:shared_process": [],
+    "2BRM14TY4:shared_process": [],
+    "2BPACEMEF:shared_process": [],
+    "2BS2T6V8Z:shared_process": [],
+    "2BQJP847M:shared_process": [],
+    "2BNUTW2S8:shared_process": [],
+    "2BP57YE3N:shared_process": [],
+    "2BP5Z8QQD:shared_process": [],
+    "2BQUDHGJ7:shared_process": [],
+    "2BSAMC5FG:shared_process": [],
+    "2BQKHP2W7:2BP8CZUUA": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
